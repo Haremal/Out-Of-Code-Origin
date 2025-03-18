@@ -1,0 +1,66 @@
+{
+  "type": "origins:multiple",
+  "setup": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"NAN_NERVES\",\"NAN\"]}"
+    },
+    "cooldown": 0,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:command",
+      "command": "execute if entity @e[tag=NAN_NERVES]",
+      "comparison": "==",
+      "compare_to": 0
+    }
+  },
+  "remove": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "kill @e[tag=NAN_NERVES,scores={Timer=1..}]"
+    },
+    "cooldown": 0,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    }
+  },
+  "area": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "execute as @e[tag=NAN_NERVES] at @s run tp @s ^ ^ ^2"
+    },
+    "cooldown": 0,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    }
+  },
+  "rotation": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "data modify entity @e[tag=NAN_NERVES,limit=1] Rotation set from entity @s Rotation"
+    },
+    "cooldown": 0,
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    }
+  },
+
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Use with %s"
+    }
+  ],
+  "name": "NaN Nerves",
+  "description": "TODO"
+}

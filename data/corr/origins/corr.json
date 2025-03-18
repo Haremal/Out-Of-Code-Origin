@@ -1,0 +1,12 @@
+{
+  "powers": [
+    "corr:nan_nerves"
+  ],
+  "icon": {
+    "item": "minecraft:music_disc_11"
+  },
+  "order": 99,
+  "impact": 3,
+  "name": "Corr",
+  "description":"TODO"
+}
