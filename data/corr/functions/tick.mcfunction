@@ -26,11 +26,6 @@ scoreboard players add @e[tag=STOP] Timer 1
         execute unless entity @e[tag=NAN_NERVES] run kill @e[tag=DYING,limit=30]
         execute unless entity @e[tag=NAN_NERVES] run kill @e[tag=NAN_NERVES_ENDS]
     # POWERS
-
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!OPTIMILIZE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! (it sucks)
-        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
         # EXECUTE
         execute at @e[tag=NAN_NERVES] positioned ~ ~5 ~ run tag @e[distance=..20,tag=!NAN] add CORRUPTED
         execute at @e[tag=NAN_NERVES] positioned ~ ~5 ~ run execute at @e[tag=!NAN,distance=..20] run execute unless entity @e[tag=STOP,distance=..0.3] run summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:["STOP","NAN"]}
