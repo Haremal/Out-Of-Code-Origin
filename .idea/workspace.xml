@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="NaN Nerves update">
+      <change afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/nan_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/nan_nerves.json" afterDir="false" />
@@ -56,6 +56,11 @@
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_0\datapacks\Out-Of-Code-Origin" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -89,11 +94,20 @@
       <option name="project" value="LOCAL" />
       <updated>1742340006935</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="NaN Nerves update">
+      <option name="closed" value="true" />
+      <created>1742425695043</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742425695043</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+    <MESSAGE value="NaN Nerves update" />
+    <option name="LAST_COMMIT_MESSAGE" value="NaN Nerves update" />
   </component>
 </project>

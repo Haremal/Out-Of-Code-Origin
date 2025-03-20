@@ -1,0 +1,32 @@
+Appearence: (armor)
+- Black hoodie
+- Hood on eyes (Colorful eyes in NaN Dimension)
+- NaN Nerves around ring fingers
+- Wide smile
+Powers: 
+- NaN Health - Corr's health value is NaN making him unkillable even by commands (glitchy/NaNs)
+- NaN Dimension (void/colorful)
+   • Corr goes out of code with corrupted objects
+   • Everything takes constant dmg and can't move
+   • Corr can travel through it
+- Corruption (glitches/permanent)
+   • shows data of affected objects (menu/sidebar)
+   • edits position randomly within close distance
+   • reduces health of affected objects
+Debuffs:
+- Being corrupted
+
+
+Story (Broken, Villain, Progress-Suffering, Corruption at the end leading to God powers - IN NOTES IN RANDOM STRUCTURES):
+- Human decided
+
+
+
+
+TODO:
+- ADD SECOND AND THIRD NAN NERVES POWER
+- FIX BLOCK DISPLAY
+- ADD ICON
+- MAKE MAIN DESCRIPTION
+
+https://origins.readthedocs.io/en/1.10.0/
