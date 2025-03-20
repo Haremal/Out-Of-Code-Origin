@@ -3,55 +3,59 @@
   "spread": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else_listTODODOODODODODOOODO dawadwafwiojfoajfwjwoajfowif",f wafwafoiwjfowjiwjjfia
-      "actions":
-      "condition": {
-        "type": "origins:command",
-        "command": "execute if entity @e[tag=NAN_NERVES]",
-        "comparison": "==",
-        "compare_to": 0
-      },
-      "if_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:execute_command",
-            "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"NAN_NERVES\",\"NAN\"]}"
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @e[tag=NAN_NERVES]",
+            "comparison": "==",
+            "compare_to": 0
           },
-          {
-            "type": "origins:execute_command",
-            "command": "data modify entity @e[tag=NAN_NERVES,limit=1] Rotation set from entity @s Rotation"
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"NAN_NERVES\",\"NAN\"]}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "data modify entity @e[tag=NAN_NERVES,limit=1] Rotation set from entity @s Rotation"
+              }
+            ]
           }
-        ]
-      },
-      "else_action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:execute_command",
-            "command": "kill @e[tag=NAN_NERVES,scores={Timer=5..}]"
+        },
+        {
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @e[tag=NAN_NERVES]",
+            "comparison": "==",
+            "compare_to": 1
           },
-          {
-            "type": "origins:execute_command",
-            "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=NAN_NERVES,scores={Timer=5..}]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
+              }
+            ]
           }
-        ]
-      }
-
+        }
+      ]
     },
-
-    "cooldown": 200,
     "key": {
       "key": "key.origins.primary_active",
       "continuous": false
-    },
-    "hud_render": {
-      "should_render": true,
-      "bar_index": 3
     }
   },
   "spread_forward": {
@@ -91,45 +95,48 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "summon minecraft:block_display ~ ~-100 ~ {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},block_state:{Name:\"purple_wool\"},NoGravity:1b,Tags:[\"THROW\",\"NAN\"]}"
+          "command": "execute at @e[tag=GRABBED] unless entity @e[tag=THROW] run summon minecraft:block_display ~ ~-100 ~ {transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},block_state:{Name:\"purple_wool\"},NoGravity:1b,Tags:[\"THROW\",\"NAN\"]}"
         },
-        {
-          "type": "origins:execute_command",
-          "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,NoGravity:1b,Tags:[\"GRAB\",\"NAN\"]}"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "tp @e[tag=GRAB] @s"
-        }
-      ]
-    },
-    "key": {
-      "key": "key.use",
-      "continuous": false
-    }
-  },
-  "throw_control": {
-    "type": "origins:active_self",
-    "entity_action": {
-      "type": "origins:and",
-      "actions": [
         {
           "type": "origins:execute_command",
           "command": "scoreboard players set @e[tag=THROW] Timer 0"
         },
         {
           "type": "origins:execute_command",
-          "command": "execute at @s run tp @e[tag=THROW] ~ ~1 ~ ~ ~"
+          "command": "execute at @s positioned ~ ~0.7 ~ run execute positioned ^-0.4 ^ ^ facing entity @e[tag=GRABBED,limit=1] feet run tp @e[tag=THROW] ^ ^ ^ ~ ~-5"
         },
         {
           "type": "origins:execute_command",
-          "command": "tp @e[tag=GRABBED] ^ ^ ^10"
+          "command": "execute at @s unless entity @e[tag=GRABBED] run kill @e[tag=THROW]"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @e[tag=GRABBED] ^ ^1 ^9"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "effect give @e[tag=GRABBED] levitation 1 1 true"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest] add GRABBED"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": ""
         }
       ]
     },
     "key": {
       "key": "key.use",
       "continuous": true
+    },
+    "condition": {
+      "type": "origins:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+        "type": "origins:empty"
+      }
     }
   },
 
@@ -142,17 +149,17 @@
     },
     {
       "sprite": "minecraft:textures/block/cobweb.png",
-      "text": "§dHold §r%s§d to §eSPREAD§d them forward and click to remove"
+      "text": "§dHold §r%s§d to §eSPREAD§d them and click to remove"
     },
     {
       "sprite": "minecraft:textures/item/string.png",
-      "text": "§dHold §r[Use]§d to §eTHROW§d them to control and hurt objects"
+      "text": "§dHold §r[Use]§d to §eTHROW§d them to move and inspect objects"
     },
     {
       "sprite": "minecraft:textures/item/ender_eye.png",
-      "text": "§dHold §r[Sneak] + %s§d to §eTRANSFORM§d into them and back"
+      "text": "§dHold §r[Sneak] + %s§d to §eTRANSFORM§d to them"
     }
   ],
   "name": "NaN Nerves",
-  "description": "Corr is the nervous system moving through the code. He manipulates himself as he wants and can create a human body. He doesn't care if it's hurt though so he abuses it with his nerves."
+  "description": "§dCorr is the nervous system spreading throughout the code. He manipulates himself as he wants and can create a human body. He doesn't care if it's hurt though so he abuses it and pull it with his nerves."
 }

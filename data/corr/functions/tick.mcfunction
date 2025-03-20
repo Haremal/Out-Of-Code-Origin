@@ -1,6 +1,7 @@
 # SELF
-tag @e[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] add NAN
-tag @e[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] add CORRUPTED
+tag @a[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] add CORR
+tag @a[tag=CORR] add NAN
+tag @a[tag=CORR] add CORRUPTED
 
 # NAN NERVES
     # SETUP
@@ -30,15 +31,20 @@ tag @e[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}
     execute at @e[tag=NAN_NERVES] positioned ~ ~ ~ run kill @e[tag=NAN_DYING,scores={Timer=5..},distance=35..]
     execute at @e[tag=NAN_NERVES] positioned ~ ~5 ~ run tag @e[distance=20..,tag=!NAN] remove NAN_BOTTOM
     execute as @e[tag=NAN_STOP] at @s run execute unless entity @e[distance=..1,tag=!NAN,limit=1,sort=nearest] run kill @s
-    #THROW
-    execute as @e[tag=GRAB] at @s run tp @s ^ ^ ^1
-    execute at @e[tag=GRAB] run tag @e[distance=..1,tag=!NAN] add GRABBED
+    # THROW
     tag @e[tag=GRABBED] add CORRUPTED
+    execute if entity @e[tag=THROW] run execute store result score Health: Data run data get entity @e[tag=GRABBED,limit=1] Health
+    execute if entity @e[tag=THROW] run execute store result score Hunger: Data run data get entity @e[tag=GRABBED,limit=1] foodLevel
+    execute if entity @e[tag=THROW] run execute store result score Xp: Data run data get entity @e[tag=GRABBED,limit=1] XpLevel
+    execute if entity @e[tag=THROW] run execute store result score PosX: Data run data get entity @e[tag=GRABBED,limit=1] Pos[0]
+    execute if entity @e[tag=THROW] run execute store result score PosY: Data run data get entity @e[tag=GRABBED,limit=1] Pos[1]
+    execute if entity @e[tag=THROW] run execute store result score PosZ: Data run data get entity @e[tag=GRABBED,limit=1] Pos[2]
+    execute if entity @e[tag=THROW] run execute store result score SpawnX: Data run data get entity @e[tag=GRABBED,limit=1] SpawnX
+    execute if entity @e[tag=THROW] run execute store result score SpawnZ: Data run data get entity @e[tag=GRABBED,limit=1] SpawnZ
     # THROW_REMOVE
     kill @e[tag=THROW,scores={Timer=5..}]
-    kill @e[tag=GRAB,scores={Timer=10..}]
-    execute unless entity @e[tag=THROW] run tag @e[tag=GRABBED] remove GRABBED
-
+    execute at @a[tag=CORR] positioned ^ ^ ^5 run tag @e[distance=6..,tag=GRABBED] remove GRABBED
+    execute unless entity @e[tag=THROW] run effect clear @e[tag=GRABBED] levitation
 
 # CORRUPTED
     # REMOVAl

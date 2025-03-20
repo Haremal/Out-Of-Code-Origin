@@ -16,17 +16,18 @@ Powers:
 Debuffs:
 - Being corrupted
 
-
 Story (Broken, Villain, Progress-Suffering, Corruption at the end leading to God powers - IN NOTES IN RANDOM STRUCTURES):
-- Human decided
-
-
-
 
 TODO:
-- ADD SECOND AND THIRD NAN NERVES POWER
-- FIX BLOCK DISPLAY
+- ADD THIRD NAN NERVES POWER
+- FIX BLOCK DISPLAY AND SUMMON BLOCK DISPLAY
 - ADD ICON
-- MAKE MAIN DESCRIPTION
+- FIX THROW POWER + ADD {
+    Scoreboard add killing
+    Scoreboard add @e[tag=grabbed] killing 1
+    Kill @e killing = 100
+    Particle add @e killing > 1 falling_obsidian_tears
+}
+
 
 https://origins.readthedocs.io/en/1.10.0/
