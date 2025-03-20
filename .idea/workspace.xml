@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Fix if_else_list">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Version 0.2">
+      <change afterPath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/origins/corr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/origins/corr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/powers/nan_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/nan_nerves.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/nan_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,13 +113,22 @@
       <option name="project" value="LOCAL" />
       <updated>1742465336839</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Version 0.2">
+      <option name="closed" value="true" />
+      <created>1742501883716</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742501883716</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit" />
     <MESSAGE value="NaN Nerves update" />
     <MESSAGE value="Fix if_else_list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix if_else_list" />
+    <MESSAGE value="Version 0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.2" />
   </component>
 </project>

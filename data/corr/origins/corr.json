@@ -1,6 +1,7 @@
 {
   "powers": [
-    "corr:nan_nerves"
+    "corr:corr_nerves",
+    "corr:data_corruption"
   ],
   "icon": {
     "item": "minecraft:music_disc_11"

@@ -9,25 +9,32 @@ Powers:
    • Corr goes out of code with corrupted objects
    • Everything takes constant dmg and can't move
    • Corr can travel through it
-- Corruption (glitches/permanent)
-   • shows data of affected objects (menu/sidebar)
-   • edits position randomly within close distance
-   • reduces health of affected objects
 Debuffs:
 - Being corrupted
 
 Story (Broken, Villain, Progress-Suffering, Corruption at the end leading to God powers - IN NOTES IN RANDOM STRUCTURES):
 
 TODO:
-- ADD THIRD NAN NERVES POWER
+- CHANGE %s to [sthsthblabla]
+- ADD ICON (SKIN)
+FIRST POWER
 - FIX BLOCK DISPLAY AND SUMMON BLOCK DISPLAY
-- ADD ICON
-- FIX THROW POWER + ADD {
-    Scoreboard add killing
+- ADD SOUNDS (DRRRRRRRRRRRR)
+- ADD HEAD SHAKING
+- ADD TURN
+SECOND POWER
+- ADD {
     Scoreboard add @e[tag=grabbed] killing 1
     Kill @e killing = 100
     Particle add @e killing > 1 falling_obsidian_tears
 }
+- ADD TINT/TRANSPARENT SKIN (CORRUPTED)
+- ADD DESCRIPTION
+ADD THIRD POWER
+ADD DEBUFFS
+
+
+
 
 
 https://origins.readthedocs.io/en/1.10.0/

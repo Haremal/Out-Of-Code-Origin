@@ -1,0 +1,99 @@
+{
+  "type": "origins:multiple",
+  "spread": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @e[tag=CORR_NERVES]",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"CORR_NERVES\",\"NAN\"]}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "data modify entity @e[tag=CORR_NERVES,limit=1] Rotation set from entity @s Rotation"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @e[tag=CORR_NERVES]",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=CORR_NERVES,scores={Timer=5..}]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    }
+  },
+  "spread_forward": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute as @e[tag=CORR_NERVES] at @s run tp @s ^ ^ ^2"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @e[tag=CORR_NERVES] run execute as @e[tag=!NAN,distance=..40] run damage @s 1"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.origins.primary_active",
+      "continuous": true
+    }
+  },
+  "spread_fly": {
+    "type": "origins:creative_flight",
+    "condition": {
+      "type": "origins:command",
+      "command": "execute if entity @e[tag=CORR_NERVES,distance=..21]",
+      "comparison": "==",
+      "compare_to": 1
+    }
+  },
+
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "§dCorr's Nerves hit objects while moving and stop them§r\n§dHold/Click §r%s§d to §eSPREAD§d them and fly within them§r\n§dHold §r[Sneak] + %s§d to §eTURN§d to them and move freely"
+    }
+  ],
+  "name": "§aCorr's Nerves",
+  "description": "§dCorr is the nervous system spreading throughout the code. He manipulates himself as he wants. He abuses his fake body and pull it with his nerves."
+}
