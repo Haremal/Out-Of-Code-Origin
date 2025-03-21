@@ -9,30 +9,25 @@ Powers:
    • Corr goes out of code with corrupted objects
    • Everything takes constant dmg and can't move
    • Corr can travel through it
-Debuffs:
-- Being corrupted
 
 Story (Broken, Villain, Progress-Suffering, Corruption at the end leading to God powers - IN NOTES IN RANDOM STRUCTURES):
 
 TODO:
-- CHANGE %s to [sthsthblabla]
 - ADD ICON (SKIN)
 FIRST POWER
-- FIX BLOCK DISPLAY AND SUMMON BLOCK DISPLAY
-- ADD SOUNDS (DRRRRRRRRRRRR)
-- ADD HEAD SHAKING
+- FIX: BLOCK DISPLAY, SUMMON BLOCK DISPLAY (SPREAD)
+- ADD SOUND DRRRRRRRRRRRR (SPREAD)
+- ADD HEAD SHAKING (SPREAD)
+- ADD TEXT_DISPLAY WITH BLACK TEXT AS BEGINNING OF EACH NERVE (SPREAD)
 - ADD TURN
 SECOND POWER
-- ADD {
-    Scoreboard add @e[tag=grabbed] killing 1
-    Kill @e killing = 100
-    Particle add @e killing > 1 falling_obsidian_tears
-}
-- ADD TINT/TRANSPARENT SKIN (CORRUPTED)
-- ADD DESCRIPTION
-ADD THIRD POWER
-ADD DEBUFFS
-
+- ADD TINT/TRANSPARENT SKIN (CORRUPTION)
+- ADD RANDOM SPREAD PLAYER (CORRUPTION)
+- CHANGE SCOREBOARD TO TEXT DISPLAY (GRABBED)
+THIRD POWER
+- ADD NAN DIMENSION
+DEBUFFS
+- BEING CORRUPTED
 
 
 

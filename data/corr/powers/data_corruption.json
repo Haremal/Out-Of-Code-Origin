@@ -28,7 +28,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "execute positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest] add GRABBED"
+          "command": "execute positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest,type=!item] add GRABBED"
         }
       ]
     },
@@ -55,12 +55,8 @@
           "command": "scoreboard players add @e[tag=GRABBED] Corruption 1"
         },
         {
-          "type": "origins:attribute",
-          "modifier": {
-            "attribute": "minecraft:generic.max_health",
-            "value": 1,
-            "operation": "addition"
-          }
+          "type": "origins:execute_command",
+          "command": "execute if score Health: Data > Health0 Timer run damage @e[tag=GRABBED,limit=1] 3"
         }
       ]
     },
@@ -88,12 +84,9 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§dCorruption lowers objects health and tp them randomly§r\n§dHold §r%s§d to §eGRAB§d objects and display their data§r\n§dHold §r[SNEAK] + %s§d to §eCORRUPT§d objects"
+      "text": "§b§lHold %s:§r\n§d- To §eGRAB§d objects and display their data§r\n§d- And hold §r[Sneak]§d to §eCORRUPT§d objects§r\n§d- Corruption cuts objects health and tp them random"
     }
   ],
-  "name": "§aData Corruption",
-  "description": "§d"
+  "name": "§a§nData Corruption",
+  "description": "§dCorr behaves like a malware. He can read and corrupt sensitive data. To do this Corr's Nerves has to have a direct contact with his fake body and his target."
 }
-
-
-
