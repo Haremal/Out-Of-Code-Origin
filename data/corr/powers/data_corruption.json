@@ -70,7 +70,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "execute if score HealthData Timer > Health0 Timer run damage @e[tag=GRABBED,limit=1] 0.01"
+          "command": "damage @e[tag=GRABBED,limit=1] 0.0000000001"
         }
       ]
     },

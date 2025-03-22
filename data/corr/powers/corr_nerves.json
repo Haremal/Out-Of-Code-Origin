@@ -73,7 +73,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "execute at @e[tag=CORR_NERVES,type=!player] run execute as @e[tag=!NAN,distance=..40] run damage @s 1"
+          "command": "scoreboard players set NervesMoving Timer 0"
         }
       ]
     },
@@ -173,6 +173,6 @@
       "text": "§b§lClick %s:§r\n§d- Or hold it to §eSPREAD§d nerves and fly within them§r\n§d- And hold §r[Sneak]§d to §eTURN§d to nerves and move freely§r\n§d- Corr's Nerves will hit objects while they're moving and will always stop entirely objects within them"
     }
   ],
-  "name": "§aCorr's Nerves",
+  "name": "§a§nCorr's Nerves",
   "description": "§dCorr is the nervous system spreading throughout the code. He manipulates himself as he wants. He abuses his fake body and forcefully pull it with his nerves."
 }

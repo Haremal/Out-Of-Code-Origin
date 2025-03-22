@@ -6,24 +6,22 @@ Appearence: (Armor as FULL SKIN (heads, replace textures))
 Powers: 
 - NaN Health - Corr's health value is NaN making him unkillable even by commands (glitchy/NaNs)
 - NaN Dimension (void/colorful)
-   • Corr goes out of code with corrupted objects
-   • Everything takes constant dmg and can't move
-   • Corr can travel through it
 
 Story (Broken, Villain, Progress-Suffering, Corruption at the end leading to God powers - IN NOTES IN RANDOM STRUCTURES):
 
 TODO:
 - ADD ICON (SKIN)
+- FIX: BLOCK_DISPLAYS, SUMMON BLOCK DISPLAYS (SPREAD/GRAB)
+
 FIRST POWER
-- FIX: BLOCK DISPLAY, SUMMON BLOCK DISPLAY (SPREAD)
 - ADD SOUND DRRRRRRRRRRRR (SPREAD)
-- ADD HEAD SHAKING (SPREAD)
-- ADD TURN
 SECOND POWER
 - ADD DISPLAY_TEXT AS GLITCHES (CORRUPTION)
 THIRD POWER
-- ADD NAN DIMENSION
-- ADD (Create a replica with FULL SKIN and spread player)
+- ADD GLITCHES EFFECT WITHIN TARGET AREA (RELOCATE)
+- ADD DELAY (RELOCATE)
+- ADD CORR SPAWN IN NAN DIMENSION (GLITCH)
+
 DEBUFFS
 - CORR HAS MAXIMUM CORRUPTION
 

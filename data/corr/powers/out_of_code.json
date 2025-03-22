@@ -1,0 +1,40 @@
+{
+  "type": "origins:multiple",
+  "relocate": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "execute at @e[tag=!NAN,distance=..15,limit=1,sort=nearest] run spreadplayers ~ ~ 0 7 false @s"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ~ ~ ~ facing entity @e[tag=!NAN,distance=..15,limit=1,sort=nearest]"
+        }
+      ]
+    },
+    "cooldown": 3,
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
+    }
+  },
+  "glitch": {
+
+  },
+
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "§b§lClick %s:§r\n§d- And hold it to §eRELOCATE§d constantly near the target§r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with corrupted objects§r\n§d- Outside of the code everything takes constant dmg and can't move except for Corr who can travel through it"
+    }
+  ],
+  "name": "§a§nOut of Code",
+  "description": "§dCorr found his home not to be within the code or exists. This place can't be accessed by not corrupted beings and corrupted ones can't move in it except Corr."
+}

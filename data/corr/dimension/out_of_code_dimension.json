@@ -1,0 +1,16 @@
+{
+  "type": "corr:nan_dimension_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "corr:nan_biome",
+      "layers": [
+        {
+          "height": 1,
+          "block": "minecraft:barrier"
+        }
+      ],
+      "structure_overrides": []
+    }
+  }
+}
