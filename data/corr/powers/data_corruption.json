@@ -41,11 +41,21 @@
       "continuous": true
     },
     "condition": {
-      "type": "origins:equipped_item",
-      "equipment_slot": "mainhand",
-      "item_condition": {
-        "type": "origins:empty"
-      }
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        },
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:empty"
+          }
+        }
+      ]
     }
   },
 

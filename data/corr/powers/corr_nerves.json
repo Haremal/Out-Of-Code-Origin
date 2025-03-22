@@ -29,7 +29,7 @@
         {
           "condition": {
             "type": "origins:command",
-            "command": "execute if entity @e[tag=CORR_NERVES]",
+            "command": "execute if entity @e[tag=CORR_NERVES,type=!player]",
             "comparison": "==",
             "compare_to": 1
           },
@@ -38,15 +38,15 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "kill @e[tag=CORR_NERVES,scores={Timer=5..}]"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
+                "command": "kill @e[tag=CORR_NERVES,type=!player,scores={Timer=5..}]"
               },
               {
                 "type": "origins:execute_command",
                 "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
               }
             ]
           }
@@ -56,6 +56,10 @@
     "key": {
       "key": "key.origins.primary_active",
       "continuous": false
+    },
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
     }
   },
   "spread_forward": {
@@ -65,11 +69,11 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "execute as @e[tag=CORR_NERVES] at @s run tp @s ^ ^ ^2"
+          "command": "execute as @e[tag=CORR_NERVES,type=!player] at @s run tp @s ^ ^ ^2"
         },
         {
           "type": "origins:execute_command",
-          "command": "execute at @e[tag=CORR_NERVES] run execute as @e[tag=!NAN,distance=..40] run damage @s 1"
+          "command": "execute at @e[tag=CORR_NERVES,type=!player] run execute as @e[tag=!NAN,distance=..40] run damage @s 1"
         }
       ]
     },
@@ -82,11 +86,86 @@
     "type": "origins:creative_flight",
     "condition": {
       "type": "origins:command",
-      "command": "execute if entity @e[tag=CORR_NERVES,distance=..21]",
+      "command": "execute if entity @e[tag=CORR_NERVES,type=!player,distance=..21]",
       "comparison": "==",
       "compare_to": 1
     }
   },
+
+  "turn": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=CORR_NERVES]",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=CORR_NERVES,type=!player]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @s add CORR_NERVES"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "gamemode spectator @s"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:command",
+            "command": "execute if entity @s[tag=CORR_NERVES]",
+            "comparison": "==",
+            "compare_to": 1
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "tag @s remove CORR_NERVES"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"CORR_NERVES\",\"NAN\"]}"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "gamemode survival @s"
+              }
+            ]
+          }
+        }
+      ]
+    },
+      "key": {
+      "key": "key.origins.primary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
+  },
+
 
   "badges": [
     {
