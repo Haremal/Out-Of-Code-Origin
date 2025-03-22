@@ -91,7 +91,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- Or hold it to §eSPREAD§d nerves and fly within them§r\n§d- And hold §r[Sneak]§d to §eTURN§d to nerves and move freely§r\n§d- Corr's Nerves hit objects while moving and stop them"
+      "text": "§b§lClick %s:§r\n§d- Or hold it to §eSPREAD§d nerves and fly within them§r\n§d- And hold §r[Sneak]§d to §eTURN§d to nerves and move freely§r\n§d- Corr's Nerves will hit objects while they're moving and will always stop entirely objects within them"
     }
   ],
   "name": "§aCorr's Nerves",

@@ -1,4 +1,4 @@
-Appearence: (armor)
+Appearence: (Armor as FULL SKIN (heads, replace textures))
 - Black hoodie
 - Hood on eyes (Colorful eyes in NaN Dimension)
 - NaN Nerves around ring fingers
@@ -18,18 +18,16 @@ FIRST POWER
 - FIX: BLOCK DISPLAY, SUMMON BLOCK DISPLAY (SPREAD)
 - ADD SOUND DRRRRRRRRRRRR (SPREAD)
 - ADD HEAD SHAKING (SPREAD)
-- ADD TEXT_DISPLAY WITH BLACK TEXT AS BEGINNING OF EACH NERVE (SPREAD)
 - ADD TURN
 SECOND POWER
-- ADD TINT/TRANSPARENT SKIN (CORRUPTION)
-- ADD RANDOM SPREAD PLAYER (CORRUPTION)
-- CHANGE SCOREBOARD TO TEXT DISPLAY (GRABBED)
+- ADD DISPLAY_TEXT AS GLITCHES (CORRUPTION)
 THIRD POWER
 - ADD NAN DIMENSION
+- ADD (Create a replica with FULL SKIN and spread player)
 DEBUFFS
-- BEING CORRUPTED
-
+- CORR HAS MAXIMUM CORRUPTION
 
 
 
 https://origins.readthedocs.io/en/1.10.0/
+https://mcstacker.net/
