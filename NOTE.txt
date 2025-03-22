@@ -5,9 +5,15 @@ Appearence: (Armor as FULL SKIN (heads, replace textures))
 - Wide smile
 Powers: 
 - NaN Health - Corr's health value is NaN making him unkillable even by commands (glitchy/NaNs)
-- NaN Dimension (void/colorful)
-
-Story (Broken, Villain, Progress-Suffering, Corruption at the end leading to God powers - IN NOTES IN RANDOM STRUCTURES):
+Story (IN NOTES IN RANDOM STRUCTURES)""
+- Happy
+- Progress
+- Suffering
+- Progress
+- Succes
+- Failure
+- Corruption
+- God Villain
 
 TODO:
 - ADD ICON (SKIN)
@@ -20,7 +26,8 @@ SECOND POWER
 THIRD POWER
 - ADD GLITCHES EFFECT WITHIN TARGET AREA (RELOCATE)
 - ADD DELAY (RELOCATE)
-- ADD CORR SPAWN IN NAN DIMENSION (GLITCH)
+- ADD CORR SPAWN IN DIMENSION (GLITCH)
+- ADD COLOURFUL SKY IN DIMENSION (GLITCH)
 
 DEBUFFS
 - CORR HAS MAXIMUM CORRUPTION
