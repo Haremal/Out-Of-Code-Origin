@@ -11,7 +11,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "tp @s ~ ~ ~ facing entity @e[tag=!NAN,distance=..15,limit=1,sort=nearest]"
+          "command": "tp @s ~ ~ ~ facing entity @e[type=!item,tag=!NAN,distance=..15,limit=1,sort=nearest]"
         }
       ]
     },
@@ -26,13 +26,64 @@
     }
   },
   "glitch": {
-
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else_list",
+      "actions": [
+        {
+          "condition": {
+            "type": "origins:dimension",
+            "dimension": "minecraft:overworld"
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute in corr:out_of_code_dimension run tp @s ~ ~ ~"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "spreadplayers ~ ~ 0 1 false @s"
+              }
+            ]
+          }
+        },
+        {
+          "condition": {
+            "type": "origins:dimension",
+            "dimension": "corr:out_of_code_dimension"
+          },
+          "action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "execute in minecraft:overworld run tp @s ~ ~ ~"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "spreadplayers ~ ~ 0 1 false @s"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "cooldown": 3,
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:sneaking"
+    }
   },
 
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- And hold it to §eRELOCATE§d constantly near the target§r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with corrupted objects§r\n§d- Outside of the code everything takes constant dmg and can't move except for Corr who can travel through it"
+      "text": "§b§lClick %s:§r\n§d- And hold it to §eRELOCATE§d constantly near the target§r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with corrupted objects§r\n§d- Outside of the code everything takes constant dmg and can't move except for Corr, whose §eSPAWN§d is in there"
     }
   ],
   "name": "§a§nOut of Code",
