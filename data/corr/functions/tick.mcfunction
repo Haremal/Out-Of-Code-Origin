@@ -34,9 +34,9 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
     execute at @e[tag=CORR_NERVES] positioned ~ ~5 ~ run execute at @e[tag=!NAN,distance=..20,nbt={Brain:{}}] run execute unless entity @e[tag=NAN_STOP,distance=..1] run summon minecraft:block_display ~ ~ ~ {Tags:["NAN_STOP","NAN"]}
     execute as @e[tag=NAN_STOP,scores={Timer=..1}] at @s run data modify entity @s Rotation set from entity @e[tag=!NAN,distance=..1,limit=1,sort=nearest] Rotation
     execute as @e[tag=NAN_STOP,scores={Timer=2..}] at @s run tp @e[tag=!NAN,distance=..1] @s
-        execute at @e[tag=NAN_DYING,scores={Timer=2}] run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Tags:["NAN_DESTROYER","NAN"]}
+        execute if score NervesMoving Timer < Two Timer at @e[tag=NAN_DYING,scores={Timer=2}] run summon minecraft:block_display ~ ~ ~ {Tags:["NAN_DESTROYER","NAN"]}
         execute as @e[tag=NAN_DYING,scores={Timer=2}] at @s run tp @e[tag=NAN_DESTROYER,distance=..0.1] @s
-        execute as @e[tag=NAN_DESTROYER] at @s run tp @s ^ ^ ^1
+        execute as @e[tag=NAN_DESTROYER] at @s run tp @s ^ ^ ^2
         execute as @e[tag=NAN_DESTROYER] at @s run setblock ~ ~ ~ air
     # SPREAD_REMOVE
     kill @e[tag=NAN_DYING,scores={Timer=150..}]
@@ -55,10 +55,11 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
     execute store result score grabPosX Position run data get entity @e[tag=GRABBED,limit=1] Pos[0]
     execute store result score grabPosY Position run data get entity @e[tag=GRABBED,limit=1] Pos[1]
     execute store result score grabPosZ Position run data get entity @e[tag=GRABBED,limit=1] Pos[2]
-    execute as @e[tag=GRABBED] at @a[tag=CORR] unless entity @e[name=grabbed_data] run summon text_display ^-4 ^ ^8 {Tags:["NAN"],see_through:1b,alignment:"left",CustomName:'{"text":"grabbed_data"}'}
+    execute as @e[tag=GRABBED] at @a[tag=CORR] unless entity @e[name=grabbed_data] run summon text_display ^-4 ^ ^8 {Tags:["NAN"],alignment:"left",CustomName:'{"text":"grabbed_data"}'}
     execute if entity @e[tag=THROW] run data merge entity @e[name=grabbed_data,type=text_display,limit=1] {text:'[{"text":"Entity\'s Data:","bold":true,"underlined":true},{"text":"\\n- Inventory: ","bold":true,"underlined":false},{"nbt":"Inventory","entity":"@e[tag=GRABBED,limit=1]","color":"gray","bold":false,"underlined":false},{"text":"\\n- UUID: ","bold":true,"underlined":false},{"nbt":"UUID","entity":"@e[tag=GRABBED,limit=1]","color":"blue","bold":false,"underlined":false},{"text":"\\n- Health: ","bold":true,"underlined":false},{"nbt":"Health","entity":"@e[tag=GRABBED,limit=1]","color":"red","bold":false,"underlined":false},{"text":"\\n- Hunger:  ","underlined":false},{"nbt":"foodLevel","entity":"@e[tag=GRABBED,limit=1]","color":"dark_red","bold":false,"underlined":false},{"text":"\\n- Xp: ","underlined":false},{"nbt":"XpLevel","entity":"@e[tag=GRABBED,limit=1]","color":"green","bold":false,"underlined":false},{"text":"\\n- Position: ","bold":true,"underlined":false},{"score":{"name":"grabPosX","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"score":{"name":"grabPosY","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"score":{"name":"grabPosZ","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Rotation: ","bold":true,"underlined":false},{"nbt":"Rotation","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Spawn: ","bold":true,"underlined":false},{"nbt":"SpawnX ","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"nbt":"SpawnY","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"nbt":"SpawnZ","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Corruption: ","bold":true,"underlined":false},{"score":{"name":"@e[tag=GRABBED,limit=1]","objective":"Corruption"},"color":"light_purple","bold":true,"underlined":false}]'}
     execute at @a[tag=CORR] run tp @e[name=grabbed_data,type=text_display] ^-4 ^ ^8 facing entity @a[tag=CORR,limit=1] eyes
     execute if entity @e[tag=THROW] run execute store result score HealthData Timer run data get entity @e[tag=GRABBED,limit=1] Health
+    execute at @e[tag=GRABBED] run setblock ~ ~ ~ air destroy
     # GRAB_REMOVE
     kill @e[tag=THROW,scores={Timer=5..}]
     execute if entity @e[tag=THROW,scores={Timer=4..}] run effect clear @e[tag=GRABBED] levitation

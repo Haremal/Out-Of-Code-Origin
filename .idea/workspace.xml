@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="OMG @e[nbt={Brain:{}}] I LOVE IT WITH ALL MY HEART (detecting living entities so mobs, players and for some reason armorstands mua)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742750920443</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="OMG @e[nbt={Brain:{}}] I LOVE IT WITH ALL MY HEART (detecting living entities so mobs, players and for some reason armorstands mua)">
+      <option name="closed" value="true" />
+      <created>1742769318169</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742769318169</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -209,6 +215,7 @@
     <MESSAGE value="Third power basics. Basic dimension" />
     <MESSAGE value="Massive v0.3. Almost finished power 3 and decided to make resource pack" />
     <MESSAGE value="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes" />
+    <MESSAGE value="OMG @e[nbt={Brain:{}}] I LOVE IT WITH ALL MY HEART (detecting living entities so mobs, players and for some reason armorstands mua)" />
+    <option name="LAST_COMMIT_MESSAGE" value="OMG @e[nbt={Brain:{}}] I LOVE IT WITH ALL MY HEART (detecting living entities so mobs, players and for some reason armorstands mua)" />
   </component>
 </project>
