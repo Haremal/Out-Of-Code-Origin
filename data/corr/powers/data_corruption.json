@@ -8,7 +8,7 @@
       "actions": [
         {
           "type": "origins:execute_command",
-          "command": "execute unless entity @e[tag=THROW] positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,type=!item] run summon minecraft:block_display ~ ~-100 ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},block_state:{Name:\"purple_wool\"},NoGravity:1b,Tags:[\"THROW\",\"NAN\"]}"
+          "command": "execute unless entity @e[tag=THROW] positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run summon minecraft:block_display ~ ~-100 ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},block_state:{Name:\"purple_wool\"},NoGravity:1b,Tags:[\"THROW\",\"NAN\"]}"
         },
         {
           "type": "origins:execute_command",
@@ -16,11 +16,11 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "execute positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,type=!item] run scoreboard players set @e[tag=THROW] Timer 0"
+          "command": "execute positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run scoreboard players set @e[tag=THROW] Timer 0"
         },
         {
           "type": "origins:execute_command",
-          "command": "execute unless entity @e[tag=GRABBED] positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest,type=!item] add GRABBED"
+          "command": "execute unless entity @e[tag=GRABBED] positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] add GRABBED"
         },
         {
           "type": "origins:execute_command",

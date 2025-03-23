@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Massive v0.3. Almost finished power 3 and decided to make resource pack">
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_9.json" afterDir="false" />
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/dimension/out_of_code_dimension.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/dimension/out_of_code_dimension.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/dimension_type/nan_dimension_type.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/dimension_type/nan_dimension_type.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/origins/origin_layers/origin.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/origins/origin_layers/origin.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742691963911</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes">
+      <option name="closed" value="true" />
+      <created>1742750920443</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742750920443</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -213,6 +208,7 @@
     <MESSAGE value="Corr Nerves power almost finished (no sounds, 1 visual to do)" />
     <MESSAGE value="Third power basics. Basic dimension" />
     <MESSAGE value="Massive v0.3. Almost finished power 3 and decided to make resource pack" />
-    <option name="LAST_COMMIT_MESSAGE" value="Massive v0.3. Almost finished power 3 and decided to make resource pack" />
+    <MESSAGE value="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes" />
   </component>
 </project>

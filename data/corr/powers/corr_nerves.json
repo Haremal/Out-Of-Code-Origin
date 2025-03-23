@@ -27,7 +27,7 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"CORR_NERVES\",\"NAN\"]}"
+                "command": "summon minecraft:block_display ~ ~ ~ {Tags:[\"CORR_NERVES\",\"NAN\"]}"
               },
               {
                 "type": "origins:execute_command",
@@ -166,7 +166,7 @@
               },
               {
                 "type": "origins:execute_command",
-                "command": "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoGravity:true,Tags:[\"CORR_NERVES\",\"NAN\"]}"
+                "command": "summon minecraft:block_display ~ ~ ~ {Tags:[\"CORR_NERVES\",\"NAN\"]}"
               },
               {
                 "type": "origins:execute_command",

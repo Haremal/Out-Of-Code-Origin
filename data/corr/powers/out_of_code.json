@@ -11,7 +11,7 @@
         },
         {
           "type": "origins:execute_command",
-          "command": "tp @s ~ ~ ~ facing entity @e[type=!item,tag=!NAN,distance=..15,limit=1,sort=nearest]"
+          "command": "tp @s ~ ~ ~ facing entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest]"
         }
       ]
     },
