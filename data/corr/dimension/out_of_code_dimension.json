@@ -3,7 +3,7 @@
   "generator": {
     "type": "minecraft:flat",
     "settings": {
-      "biome": "corr:nan_biome",
+      "biome": "corr:nan_biome_1",
       "layers": [
         {
           "height": 1,

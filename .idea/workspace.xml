@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Test git">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Massive v0.3. Almost finished power 3 and decided to make resource pack">
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_9.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/dimension/out_of_code_dimension.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/dimension/out_of_code_dimension.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/dimension_type/nan_dimension_type.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/dimension_type/nan_dimension_type.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/worldgen/biome/nan_biome_1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/origins/origin_layers/origin.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/origins/origin_layers/origin.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,19 +78,23 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mikes/AppData/Roaming/.minecraft/saves/test_0_6_1/datapacks/Out-Of-Code-Origin&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/mikes/AppData/Roaming/.minecraft/saves/test_0_6_2/datapacks/Out-Of-Code-Origin",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "show.migrate.to.gradle.popup": "false",
+    "two.files.diff.last.used.file": "C:/Users/mikes/AppData/Roaming/.minecraft/saves/test_0_6_1/datapacks/Out-Of-Code-Origin/data/corr/worldgen/biome/nan_biome_1.json"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr\worldgen\biome" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_0\datapacks\Out-Of-Code-Origin\data\corr" />
@@ -174,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742637948920</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Massive v0.3. Almost finished power 3 and decided to make resource pack">
+      <option name="closed" value="true" />
+      <created>1742691963911</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742691963911</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +212,7 @@
     <MESSAGE value="Corruption fully created (except for effect and sounds). Data Corruption power finished" />
     <MESSAGE value="Corr Nerves power almost finished (no sounds, 1 visual to do)" />
     <MESSAGE value="Third power basics. Basic dimension" />
-    <option name="LAST_COMMIT_MESSAGE" value="Third power basics. Basic dimension" />
+    <MESSAGE value="Massive v0.3. Almost finished power 3 and decided to make resource pack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Massive v0.3. Almost finished power 3 and decided to make resource pack" />
   </component>
 </project>

@@ -49,6 +49,11 @@
           "inverted": true
         },
         {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        },
+        {
           "type": "origins:equipped_item",
           "equipment_slot": "mainhand",
           "item_condition": {

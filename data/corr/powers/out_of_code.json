@@ -40,11 +40,27 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "execute in corr:out_of_code_dimension run tp @s ~ ~ ~"
+                "command": "execute in corr:out_of_code_dimension run tp @s[tag=!CORR_NERVES] ~ ~ ~"
               },
               {
                 "type": "origins:execute_command",
-                "command": "spreadplayers ~ ~ 0 1 false @s"
+                "command": "spreadplayers ~ ~ 0 1 false @s[tag=!CORR_NERVES]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute as @e[tag=!NAN,tag=NAN_BOTTOM] at @s in corr:out_of_code_dimension run tp @s ~ 1 ~"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "kill @e[tag=CORR_NERVES,type=!player,scores={Timer=5..}]"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
               }
             ]
           }
@@ -80,10 +96,16 @@
     }
   },
 
+  "spawn": {
+    "type": "origins:modify_player_spawn",
+    "dimension": "corr:out_of_code_dimension",
+    "spawn_strategy": "center"
+  },
+
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- And hold it to §eRELOCATE§d constantly near the target§r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with corrupted objects§r\n§d- Outside of the code everything takes constant dmg and can't move except for Corr, whose §eSPAWN§d is in there"
+      "text": "§b§lClick %s:§r\n§d- And hold it to §eRELOCATE§d constantly near the target§r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with objects in nerves§r\n§d- Out of code objects get corrupted and can't move except Corr who §eSPAWNS§d there but can't use his nerves"
     }
   ],
   "name": "§a§nOut of Code",

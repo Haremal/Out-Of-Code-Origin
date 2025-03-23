@@ -12,6 +12,8 @@ scoreboard players add @e[tag=NAN,type=!player] Timer 1
 scoreboard players add CameraShake Timer 1
 scoreboard players operation CameraShake Timer %= Two Timer
 scoreboard players add NervesMoving Timer 1
+scoreboard players add NaNBiome Timer 1
+execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome Timer 0
 
 # CORR_NERVES
     # SPREAD
@@ -49,9 +51,9 @@ scoreboard players add NervesMoving Timer 1
     execute store result score grabPosY Position run data get entity @e[tag=GRABBED,limit=1] Pos[1]
     execute store result score grabPosZ Position run data get entity @e[tag=GRABBED,limit=1] Pos[2]
     execute as @e[tag=GRABBED] at @a[tag=CORR] unless entity @e[name=grabbed_data] run summon text_display ^-4 ^ ^8 {Tags:["NAN"],see_through:1b,alignment:"left",CustomName:'{"text":"grabbed_data"}'}
+    execute if entity @e[tag=THROW] run data merge entity @e[name=grabbed_data,type=text_display,limit=1] {text:'[{"text":"Entity\'s Data:","bold":true,"underlined":true},{"text":"\\n- Inventory: ","bold":true,"underlined":false},{"nbt":"Inventory","entity":"@e[tag=GRABBED,limit=1]","color":"gray","bold":false,"underlined":false},{"text":"\\n- UUID: ","bold":true,"underlined":false},{"nbt":"UUID","entity":"@e[tag=GRABBED,limit=1]","color":"blue","bold":false,"underlined":false},{"text":"\\n- Health: ","bold":true,"underlined":false},{"nbt":"Health","entity":"@e[tag=GRABBED,limit=1]","color":"red","bold":false,"underlined":false},{"text":"\\n- Hunger:  ","underlined":false},{"nbt":"foodLevel","entity":"@e[tag=GRABBED,limit=1]","color":"dark_red","bold":false,"underlined":false},{"text":"\\n- Xp: ","underlined":false},{"nbt":"XpLevel","entity":"@e[tag=GRABBED,limit=1]","color":"green","bold":false,"underlined":false},{"text":"\\n- Position: ","bold":true,"underlined":false},{"score":{"name":"grabPosX","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"score":{"name":"grabPosY","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"score":{"name":"grabPosZ","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Rotation: ","bold":true,"underlined":false},{"nbt":"Rotation","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Spawn: ","bold":true,"underlined":false},{"nbt":"SpawnX ","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"nbt":"SpawnY","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"nbt":"SpawnZ","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Corruption: ","bold":true,"underlined":false},{"score":{"name":"@e[tag=GRABBED,limit=1]","objective":"Corruption"},"color":"light_purple","bold":true,"underlined":false}]'}
     execute at @a[tag=CORR] run tp @e[name=grabbed_data,type=text_display] ^-4 ^ ^8 facing entity @a[tag=CORR,limit=1] eyes
     execute if entity @e[tag=THROW] run execute store result score HealthData Timer run data get entity @e[tag=GRABBED,limit=1] Health
-    execute if entity @e[tag=THROW] run data merge entity @e[name=grabbed_data,type=text_display,limit=1] {text:'[{"text":"Entity\'s Data:","bold":true,"underlined":true},{"text":"\\n- Inventory: ","bold":true,"underlined":false},{"nbt":"Inventory","entity":"@e[tag=GRABBED,limit=1]","color":"gray","bold":false,"underlined":false},{"text":"\\n- UUID: ","bold":true,"underlined":false},{"nbt":"UUID","entity":"@e[tag=GRABBED,limit=1]","color":"blue","bold":false,"underlined":false},{"text":"\\n- Health: ","bold":true,"underlined":false},{"nbt":"Health","entity":"@e[tag=GRABBED,limit=1]","color":"red","bold":false,"underlined":false},{"text":"\\n- Hunger:  ","underlined":false},{"nbt":"foodLevel","entity":"@e[tag=GRABBED,limit=1]","color":"dark_red","bold":false,"underlined":false},{"text":"\\n- Xp: ","underlined":false},{"nbt":"XpLevel","entity":"@e[tag=GRABBED,limit=1]","color":"green","bold":false,"underlined":false},{"text":"\\n- Position: ","bold":true,"underlined":false},{"score":{"name":"grabPosX","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"score":{"name":"grabPosY","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"score":{"name":"grabPosZ","objective":"Position"},"color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Rotation: ","bold":true,"underlined":false},{"nbt":"Rotation","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Spawn: ","bold":true,"underlined":false},{"nbt":"SpawnX ","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"nbt":"SpawnY","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":", ","color":"aqua","bold":false,"underlined":false},{"nbt":"SpawnZ","entity":"@e[tag=GRABBED,limit=1]","color":"aqua","bold":false,"underlined":false},{"text":"\\n- Corruption: ","bold":true,"underlined":false},{"score":{"name":"@e[tag=GRABBED,limit=1]","objective":"Corruption"},"color":"light_purple","bold":true,"underlined":false}]'}
     # GRAB_REMOVE
     kill @e[tag=THROW,scores={Timer=5..}]
     execute if entity @e[tag=THROW,scores={Timer=4..}] run effect clear @e[tag=GRABBED] levitation
@@ -70,15 +72,15 @@ scoreboard players add NervesMoving Timer 1
     scoreboard players set @e[scores={Timer=1001..,Corruption=90..}] Timer 0
     execute as @e[scores={Timer=500..,Corruption=100..}] at @s run spreadplayers ~ ~ 0 1 false @s
     scoreboard players set @e[scores={Timer=1001..,Corruption=90..}] Timer 0
-    attribute @e[limit=1,scores={Corruption=10..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174001 "Corruption1" -0.1 multiply
-    attribute @e[limit=1,scores={Corruption=20..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174002 "Corruption2" -0.12 multiply
-    attribute @e[limit=1,scores={Corruption=30..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174003 "Corruption3" -0.13 multiply
-    attribute @e[limit=1,scores={Corruption=40..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174004 "Corruption4" -0.15 multiply
-    attribute @e[limit=1,scores={Corruption=50..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174005 "Corruption5" -0.17 multiply
-    attribute @e[limit=1,scores={Corruption=60..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174006 "Corruption6" -0.2 multiply
-    attribute @e[limit=1,scores={Corruption=70..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174007 "Corruption7" -0.25 multiply
-    attribute @e[limit=1,scores={Corruption=80..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174008 "Corruption8" -0.33 multiply
-    attribute @e[limit=1,scores={Corruption=90..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174009 "Corruption9" -0.5 multiply
+        attribute @e[limit=1,scores={Corruption=10..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174001 "Corruption1" -0.1 multiply
+        attribute @e[limit=1,scores={Corruption=20..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174002 "Corruption2" -0.12 multiply
+        attribute @e[limit=1,scores={Corruption=30..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174003 "Corruption3" -0.13 multiply
+        attribute @e[limit=1,scores={Corruption=40..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174004 "Corruption4" -0.15 multiply
+        attribute @e[limit=1,scores={Corruption=50..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174005 "Corruption5" -0.17 multiply
+        attribute @e[limit=1,scores={Corruption=60..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174006 "Corruption6" -0.2 multiply
+        attribute @e[limit=1,scores={Corruption=70..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174007 "Corruption7" -0.25 multiply
+        attribute @e[limit=1,scores={Corruption=80..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174008 "Corruption8" -0.33 multiply
+        attribute @e[limit=1,scores={Corruption=90..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174009 "Corruption9" -0.5 multiply
     kill @e[scores={Corruption=100..}]
     # CORRUPTION_REMOVE
 
@@ -90,4 +92,19 @@ scoreboard players add NervesMoving Timer 1
     execute store result score corrPosY Position run data get entity @a[tag=CORR,limit=1] Pos[1]
     execute store result score corrPosZ Position run data get entity @a[tag=CORR,limit=1] Pos[2]
     execute as @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run title @s actionbar ["X: ",{"color":"light_purple","score":{"name":"corrPosX","objective":"Position"}}," Y: ",{"color":"light_purple","score":{"name":"corrPosY","objective":"Position"}}," Z: ",{"color":"light_purple","score":{"name":"corrPosZ","objective":"Position"}}]
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_1
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_2
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_3
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_5
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_6
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_8
+        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
+        execute if score NaNBiome Timer matches 0 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_2
+        execute if score NaNBiome Timer matches 1 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_3
+        execute if score NaNBiome Timer matches 2 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_1
+        execute if score NaNBiome Timer matches 3 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
+        execute if score NaNBiome Timer matches 4 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
+        execute if score NaNBiome Timer matches 5 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
     # GLITCH_REMOVE

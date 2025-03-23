@@ -7,10 +7,20 @@
       "actions": [
         {
           "condition": {
-            "type": "origins:command",
-            "command": "execute if entity @e[tag=CORR_NERVES]",
-            "comparison": "==",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:command",
+                "command": "execute if entity @e[tag=CORR_NERVES]",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "corr:out_of_code_dimension",
+                "inverted": true
+              }
+            ]
           },
           "action": {
             "type": "origins:and",
@@ -99,10 +109,20 @@
       "actions": [
         {
           "condition": {
-            "type": "origins:command",
-            "command": "execute if entity @s[tag=CORR_NERVES]",
-            "comparison": "==",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:command",
+                "command": "execute if entity @s[tag=CORR_NERVES]",
+                "comparison": "==",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:dimension",
+                "dimension": "corr:out_of_code_dimension",
+                "inverted": true
+              }
+            ]
           },
           "action": {
             "type": "origins:and",
@@ -170,7 +190,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- Or hold it to §eSPREAD§d nerves and fly within them§r\n§d- And hold §r[Sneak]§d to §eTURN§d to nerves and move freely§r\n§d- Corr's Nerves will hit objects while they're moving and will always stop entirely objects within them"
+      "text": "§b§lClick %s:§r\n§d- Or hold it to §eSPREAD§d nerves and fly within them§r\n§d- And hold §r[Sneak]§d to §eTURN§d to nerves and move freely§r\n§d- Corr's nerves will hit objects while they're moving in addition to always stopping entirely objects within them"
     }
   ],
   "name": "§a§nCorr's Nerves",
