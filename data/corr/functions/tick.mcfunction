@@ -17,10 +17,10 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
 
 # CORR_NERVES
     # SPREAD
-    execute store result score NAN_TOPS_COUNT Timer run execute if entity @e[tag=NAN_TOP]
-    execute store result score NAN_BOTTOMS_COUNT Timer run execute if entity @e[tag=NAN_BOTTOM]
-    execute at @e[tag=CORR_NERVES] unless score NAN_TOPS_COUNT Timer matches 3.. run summon minecraft:block_display ~ ~20 ~ {Tags:["NAN_TOP","CORR_NERVES_ENDS","NAN"]}
-    execute at @e[tag=CORR_NERVES] unless score NAN_BOTTOMS_COUNT Timer matches 3.. run summon minecraft:block_display ~ ~-20 ~ {Tags:["NAN_BOTTOM","CORR_NERVES_ENDS","NAN"]}
+    execute store result score NaNTopsCount Timer run execute if entity @e[tag=NAN_TOP]
+    execute store result score NaNBottomsCount Timer run execute if entity @e[tag=NAN_BOTTOM]
+    execute at @e[tag=CORR_NERVES] unless score NaNTopsCount Timer matches 3.. run summon minecraft:block_display ~ ~20 ~ {Tags:["NAN_TOP","CORR_NERVES_ENDS","NAN"]}
+    execute at @e[tag=CORR_NERVES] unless score NaNBottomsCount Timer matches 3.. run summon minecraft:block_display ~ ~-20 ~ {Tags:["NAN_BOTTOM","CORR_NERVES_ENDS","NAN"]}
         execute at @e[tag=CORR_NERVES] run spreadplayers ~ ~ 0 20 false @e[tag=CORR_NERVES_ENDS]
         execute as @e[tag=CORR_NERVES_ENDS] run data modify entity @s Pos[1] set from entity @e[tag=CORR_NERVES,limit=1] Pos[1]
         execute as @e[tag=NAN_TOP,type=block_display] at @s run tp @s ~ ~20 ~
@@ -87,11 +87,14 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
         attribute @e[limit=1,scores={Corruption=70..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174007 "Corruption7" -0.25 multiply
         attribute @e[limit=1,scores={Corruption=80..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174008 "Corruption8" -0.33 multiply
         attribute @e[limit=1,scores={Corruption=90..}] minecraft:generic.max_health modifier add 123e4567-e89b-12d3-a456-426614174009 "Corruption9" -0.5 multiply
-    kill @e[scores={Corruption=100..}]
+        kill @e[scores={Corruption=100..}]
     # CORRUPTION_REMOVE
 
 # OUT_OF_CODE
     # RELOCATE
+    execute store result score CorrEyes Timer run execute if entity @e[tag=CORR_EYES]
+    kill @e[tag=CORR_EYES,scores={Timer=2..}]
+    execute as @a[tag=CORR] at @s run tp @e[tag=CORR_EYES] ^ ^2 ^1
     # RELOCATE_REMOVE
     # GLITCH
     execute store result score corrPosX Position run data get entity @a[tag=CORR,limit=1] Pos[0]
