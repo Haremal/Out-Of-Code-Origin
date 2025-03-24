@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Added icon shut up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
     </list>
@@ -81,6 +82,7 @@
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr\worldgen\biome" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_2\datapacks\Out-Of-Code-Origin" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_0\datapacks\Out-Of-Code-Origin\data\corr" />
       <recent name="C:\Users\mikes\Desktop" />
@@ -208,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742771629034</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added icon shut up">
+      <option name="closed" value="true" />
+      <created>1742845843939</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742845843939</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +235,7 @@
     <MESSAGE value="COLORFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUL dimension changes" />
     <MESSAGE value="OMG @e[nbt={Brain:{}}] I LOVE IT WITH ALL MY HEART (detecting living entities so mobs, players and for some reason armorstands mua)" />
     <MESSAGE value="Some of the note stuff done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some of the note stuff done" />
+    <MESSAGE value="Added icon shut up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added icon shut up" />
   </component>
 </project>

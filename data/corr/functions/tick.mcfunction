@@ -3,6 +3,10 @@ execute if entity @a[tag=CORR] run origin set @a[tag=!CORR,nbt={ForgeCaps:{"orig
 execute unless entity @a[tag=CORR] run tag @a[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] add CORR
 tag @a[tag=CORR] add NAN
 # scoreboard players set @a[tag=CORR] Corruption 100
+item replace entity @a[tag=CORR] armor.head with minecraft:leather_helmet{display:{color:0}}
+item replace entity @a[tag=CORR] armor.chest with minecraft:leather_chestplate{display:{color:0}}
+item replace entity @a[tag=CORR] armor.legs with minecraft:leather_leggings{display:{color:0}}
+item replace entity @a[tag=CORR] armor.feet with minecraft:leather_boots{display:{color:0}}
 # REMOVE_ORIGIN
 tag @a[nbt=!{ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] remove CORR
 tag @a[tag=!CORR] remove NAN
@@ -13,6 +17,7 @@ scoreboard players add CameraShake Timer 1
 scoreboard players operation CameraShake Timer %= Two Timer
 scoreboard players add NervesMoving Timer 1
 scoreboard players add NaNBiome Timer 1
+scoreboard players add ClonesExist Timer 1
 execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome Timer 0
 
 # CORR_NERVES
@@ -27,20 +32,21 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
         execute as @e[tag=NAN_BOTTOM,type=block_display] at @s run tp @s ~ ~-20 ~
     execute at @e[tag=NAN_TOP] run summon minecraft:block_display ~ ~-100 ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,40f]},block_state:{Name:"purple_wool"},NoGravity:1b,Tags:["NAN_DYING","NAN"]}
     execute as @e[tag=NAN_DYING,scores={Timer=..1}] at @s run tp @s ~ ~100 ~ facing entity @e[tag=NAN_BOTTOM,limit=1,sort=random] feet
-        execute if score NervesMoving Timer < Two Timer at @e[tag=CORR_NERVES] run execute as @e[tag=!NAN,distance=..40] run damage @s 2
-        execute if score NervesMoving Timer < Two Timer run execute if score CameraShake Timer matches 1 at @e[tag=CORR_NERVES] run execute as @a[distance=..80] at @s run tp @s ~ ~ ~ ~1 ~
-        execute if score NervesMoving Timer < Two Timer run execute if score CameraShake Timer matches 0 at @e[tag=CORR_NERVES] run execute as @a[distance=..80] at @s run tp @s ~ ~ ~ ~-1 ~
-    execute at @e[tag=CORR_NERVES] positioned ~ ~5 ~ run tag @e[distance=..20,tag=!NAN,nbt={Brain:{}}] add NAN_BOTTOM
-    execute at @e[tag=CORR_NERVES] positioned ~ ~5 ~ run execute at @e[tag=!NAN,distance=..20,nbt={Brain:{}}] run execute unless entity @e[tag=NAN_STOP,distance=..1] run summon minecraft:block_display ~ ~ ~ {Tags:["NAN_STOP","NAN"]}
+        execute if score NervesMoving Timer < Two Timer at @e[tag=CORR_NERVES] run execute as @e[tag=!NAN,distance=..35] run damage @s 2
+        execute if score NervesMoving Timer < Two Timer run execute if score CameraShake Timer matches 1 at @e[tag=CORR_NERVES] run execute as @a[distance=..150] at @s run tp @s ~ ~ ~ ~1 ~
+        execute if score NervesMoving Timer < Two Timer run execute if score CameraShake Timer matches 0 at @e[tag=CORR_NERVES] run execute as @a[distance=..150] at @s run tp @s ~ ~ ~ ~-1 ~
+    execute at @e[tag=CORR_NERVES] run tag @e[distance=..20,tag=!NAN,nbt={Brain:{}}] add NAN_BOTTOM
+    execute at @e[tag=CORR_NERVES] run execute at @e[tag=!NAN,distance=..20,nbt={Brain:{}}] run execute unless entity @e[tag=NAN_STOP,distance=..1] run summon minecraft:block_display ~ ~ ~ {Tags:["NAN_STOP","NAN"]}
     execute as @e[tag=NAN_STOP,scores={Timer=..1}] at @s run data modify entity @s Rotation set from entity @e[tag=!NAN,distance=..1,limit=1,sort=nearest] Rotation
     execute as @e[tag=NAN_STOP,scores={Timer=2..}] at @s run tp @e[tag=!NAN,distance=..1] @s
         execute if score NervesMoving Timer < Two Timer at @e[tag=NAN_DYING,scores={Timer=2}] run summon minecraft:block_display ~ ~ ~ {Tags:["NAN_DESTROYER","NAN"]}
         execute as @e[tag=NAN_DYING,scores={Timer=2}] at @s run tp @e[tag=NAN_DESTROYER,distance=..0.1] @s
         execute as @e[tag=NAN_DESTROYER] at @s run tp @s ^ ^ ^2
         execute as @e[tag=NAN_DESTROYER] at @s run setblock ~ ~ ~ air
+    execute if score NervesMoving Timer < Two Timer at @e[tag=CORR_NERVES] run playsound minecraft:entity.generic.explode ambient @a[distance=..150] ~ ~ ~ 10 2 1
     # SPREAD_REMOVE
     kill @e[tag=NAN_DYING,scores={Timer=150..}]
-    kill @e[tag=NAN_DESTROYER,scores={Timer=40..}]
+    kill @e[tag=NAN_DESTROYER,scores={Timer=35..}]
     kill @e[tag=REMOVE,limit=30]
     execute at @e[tag=CORR_NERVES] positioned ~ ~ ~ run kill @e[tag=NAN_STOP,distance=21..,limit=1]
     execute at @e[tag=CORR_NERVES] positioned ~ ~ ~ run kill @e[tag=NAN_DYING,scores={Timer=5..},distance=35..]
@@ -113,4 +119,9 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
         execute if score NaNBiome Timer matches 3 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
         execute if score NaNBiome Timer matches 4 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
         execute if score NaNBiome Timer matches 5 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
+    item replace entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] armor.head with minecraft:leather_helmet{display:{color:8991416}}
+    execute if entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run stopsound @a * minecraft:item.armor.equip_leather
+        execute store result score ClonesCount Timer run execute if entity @e[tag=CORR_CLONE]
+        execute if score ClonesExist Timer > Two Timer run kill @e[tag=!CORR,tag=CORR_CLONE]
+        execute if score ClonesExist Timer > Two Timer run tag @a[tag=CORR,tag=CORR_CLONE] remove CORR_CLONE
     # GLITCH_REMOVE

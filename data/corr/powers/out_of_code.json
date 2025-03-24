@@ -10,15 +10,31 @@
         "actions": [
           {
             "type": "origins:execute_command",
-            "command": "execute at @e[tag=!NAN,distance=..15,limit=1,sort=nearest] run spreadplayers ~ ~ 0 7 false @s"
+            "command": "tag @s add CORR_CLONE"
           },
           {
             "type": "origins:execute_command",
-            "command": "tp @s ~ ~ ~ facing entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest]"
+            "command": "scoreboard players set ClonesExist Timer 0"
           },
           {
             "type": "origins:execute_command",
-            "command": "scoreboard players set @e[tag=CORR_EYES] Timer 0"
+            "command": "execute unless score ClonesCount Timer matches 5.. at @s run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"leather_boots\",Count:1,tag:{display:{color:0}}},{id:\"leather_leggings\",Count:1,tag:{display:{color:0}}},{id:\"leather_chestplate\",Count:1,tag:{display:{color:0}}},{id:\"leather_helmet\",Count:1,tag:{display:{color:8991416}}}]}"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "execute at @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run spreadplayers ~ ~ 0 7 false @e[tag=CORR_CLONE]"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "execute as @e[tag=CORR_CLONE] at @s run tp @s ~ ~ ~ facing entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest]"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "execute if entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run item replace entity @e[tag=CORR_CLONE] armor.head with minecraft:leather_helmet{display:{color:8991416}}"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "execute if entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run stopsound @a[distance=..15] * minecraft:item.armor.equip_leather"
           }
         ]
       }
