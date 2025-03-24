@@ -18,10 +18,6 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "execute if score CorrEyes Timer < Two Timer run summon text_display ~ ~ ~ {Tags:[\"CORR_EYES\",\"NAN\",],Glowing:1b,text:'{\"color\":\"light_purple\",\"text\":\"■\"}',background:0}"
-          },
-          {
-            "type": "origins:execute_command",
             "command": "scoreboard players set @e[tag=CORR_EYES] Timer 0"
           }
         ]

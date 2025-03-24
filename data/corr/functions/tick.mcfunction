@@ -92,9 +92,6 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
 
 # OUT_OF_CODE
     # RELOCATE
-    execute store result score CorrEyes Timer run execute if entity @e[tag=CORR_EYES]
-    kill @e[tag=CORR_EYES,scores={Timer=2..}]
-    execute as @a[tag=CORR] at @s run tp @e[tag=CORR_EYES] ^ ^2 ^1
     # RELOCATE_REMOVE
     # GLITCH
     execute store result score corrPosX Position run data get entity @a[tag=CORR,limit=1] Pos[0]
