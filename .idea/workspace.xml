@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Added icon shut up">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Added clones to relocate power :3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742845843939</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added clones to relocate power :3">
+      <option name="closed" value="true" />
+      <created>1742857423387</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1742857423387</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -236,6 +245,7 @@
     <MESSAGE value="OMG @e[nbt={Brain:{}}] I LOVE IT WITH ALL MY HEART (detecting living entities so mobs, players and for some reason armorstands mua)" />
     <MESSAGE value="Some of the note stuff done" />
     <MESSAGE value="Added icon shut up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added icon shut up" />
+    <MESSAGE value="Added clones to relocate power :3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added clones to relocate power :3" />
   </component>
 </project>

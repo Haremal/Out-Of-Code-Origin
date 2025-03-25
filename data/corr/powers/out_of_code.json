@@ -18,7 +18,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "execute unless score ClonesCount Timer matches 5.. at @s run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"leather_boots\",Count:1,tag:{display:{color:0}}},{id:\"leather_leggings\",Count:1,tag:{display:{color:0}}},{id:\"leather_chestplate\",Count:1,tag:{display:{color:0}}},{id:\"leather_helmet\",Count:1,tag:{display:{color:8991416}}}]}"
+            "command": "execute unless score ClonesCount Timer matches 5.. at @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"leather_boots\",Count:1,tag:{display:{color:0}}},{id:\"leather_leggings\",Count:1,tag:{display:{color:0}}},{id:\"leather_chestplate\",Count:1,tag:{display:{color:0}}},{id:\"leather_helmet\",Count:1,tag:{display:{color:8991416}}}]}"
           },
           {
             "type": "origins:execute_command",
@@ -59,6 +59,39 @@
       ]
     }
   },
+  "relocate_setup": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:play_sound",
+      "sound": "minecraft:entity.experience_orb.pickup"
+    },
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=GRABBED]",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest]",
+          "comparison": "==",
+          "compare_to": 1
+        }
+      ]
+    }
+  },
+
   "glitch": {
     "type": "origins:active_self",
     "entity_action": {
@@ -70,7 +103,8 @@
             "conditions": [
               {
                 "type": "origins:dimension",
-                "dimension": "minecraft:overworld"
+                "dimension": "corr:out_of_code_dimension",
+                "inverted": true
               },
               {
                 "type": "origins:command",
@@ -120,7 +154,7 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "execute in minecraft:overworld run tp @s ~ ~ ~"
+                "command": "execute at @a[tag=!CORR,limit=1,sort=nearest] run tp @s ^ ^ ^-30 facing entity @a[tag=!CORR,limit=1,sort=nearest]"
               },
               {
                 "type": "origins:execute_command",
