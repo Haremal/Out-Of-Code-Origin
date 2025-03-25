@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Added clones to relocate power :3">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Made dimension teleport. Backup for adding dimensions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/load.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +68,7 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mikes/AppData/Roaming/.minecraft/saves/test_0_6_2/datapacks/Out-Of-Code-Origin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mikes/AppData/Roaming/.minecraft/saves/test_0_6_2/datapacks/Out-Of-Code-Origin/data/corr&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/mikes/AppData/Roaming/.minecraft/saves/test_0_6_1/datapacks/Out-Of-Code-Origin/data/corr/worldgen/biome/nan_biome_1.json&quot;
@@ -80,14 +76,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_2\datapacks\Out-Of-Code-Origin\data\corr" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr\worldgen\biome" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_2\datapacks\Out-Of-Code-Origin\data" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_2\datapacks\Out-Of-Code-Origin" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_0\datapacks\Out-Of-Code-Origin\data\corr" />
       <recent name="C:\Users\mikes\Desktop" />
-      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_0\datapacks\Out-Of-Code-Origin" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -227,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742857423387</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Made dimension teleport. Backup for adding dimensions">
+      <option name="closed" value="true" />
+      <created>1742907348317</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1742907348317</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -246,6 +251,7 @@
     <MESSAGE value="Some of the note stuff done" />
     <MESSAGE value="Added icon shut up" />
     <MESSAGE value="Added clones to relocate power :3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added clones to relocate power :3" />
+    <MESSAGE value="Made dimension teleport. Backup for adding dimensions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made dimension teleport. Backup for adding dimensions" />
   </component>
 </project>
