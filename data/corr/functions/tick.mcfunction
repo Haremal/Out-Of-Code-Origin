@@ -98,12 +98,18 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
 
 # OUT_OF_CODE
     # RELOCATE
+    execute store result score ClonesCount Timer run execute if entity @e[tag=CORR_CLONE]
     # RELOCATE_REMOVE
+    execute if score ClonesExist Timer > Two Timer run kill @e[tag=!CORR,tag=CORR_CLONE]
+    execute if score ClonesExist Timer > Two Timer run tag @a[tag=CORR,tag=CORR_CLONE] remove CORR_CLONE
     # GLITCH
     execute store result score corrPosX Position run data get entity @a[tag=CORR,limit=1] Pos[0]
     execute store result score corrPosY Position run data get entity @a[tag=CORR,limit=1] Pos[1]
     execute store result score corrPosZ Position run data get entity @a[tag=CORR,limit=1] Pos[2]
-    execute as @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run title @s actionbar ["X: ",{"color":"light_purple","score":{"name":"corrPosX","objective":"Position"}}," Y: ",{"color":"light_purple","score":{"name":"corrPosY","objective":"Position"}}," Z: ",{"color":"light_purple","score":{"name":"corrPosZ","objective":"Position"}}]
+    scoreboard players operation corrDim Position = corrPosX Position
+    scoreboard players operation corrDim Position %= corrPosZ Position
+    scoreboard players operation corrDim Position %= Three Timer
+    execute as @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run title @s actionbar ["Universe: ",{"color":"light_purple","score":{"name":"corrDim","objective":"Position"}}," X: ",{"color":"light_purple","score":{"name":"corrPosX","objective":"Position"}}," Y: ",{"color":"light_purple","score":{"name":"corrPosY","objective":"Position"}}," Z: ",{"color":"light_purple","score":{"name":"corrPosZ","objective":"Position"}}]
         execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_1
         execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_2
         execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_3
@@ -121,7 +127,5 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
         execute if score NaNBiome Timer matches 5 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
     item replace entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] armor.head with minecraft:leather_helmet{display:{color:8991416}}
     execute if entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run stopsound @a * minecraft:item.armor.equip_leather
-        execute store result score ClonesCount Timer run execute if entity @e[tag=CORR_CLONE]
-        execute if score ClonesExist Timer > Two Timer run kill @e[tag=!CORR,tag=CORR_CLONE]
-        execute if score ClonesExist Timer > Two Timer run tag @a[tag=CORR,tag=CORR_CLONE] remove CORR_CLONE
+
     # GLITCH_REMOVE

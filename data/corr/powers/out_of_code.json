@@ -154,7 +154,15 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "execute at @a[tag=!CORR,limit=1,sort=nearest] run tp @s ^ ^ ^-30 facing entity @a[tag=!CORR,limit=1,sort=nearest]"
+                "command": "execute if score corrDim Position matches 0 run execute in minecraft:overworld run tp @s ~ ~ ~"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute if score corrDim Position matches 1 run execute in minecraft:the_nether run tp @s ~ ~ ~"
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute if score corrDim Position matches 2 run execute in minecraft:the_end run tp @s ~ ~ ~"
               },
               {
                 "type": "origins:execute_command",
