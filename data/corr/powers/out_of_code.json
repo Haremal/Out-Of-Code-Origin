@@ -18,7 +18,7 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "execute unless score ClonesCount Timer matches 5.. at @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"leather_boots\",Count:1,tag:{display:{color:0}}},{id:\"leather_leggings\",Count:1,tag:{display:{color:0}}},{id:\"leather_chestplate\",Count:1,tag:{display:{color:0}}},{id:\"leather_helmet\",Count:1,tag:{display:{color:8991416}}}]}"
+            "command": "execute unless score ClonesCount Timer matches 5.. at @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"chainmail_boots\",Count:1},{id:\"chainmail_leggings\",Count:1},{id:\"chainmail_chestplate\",Count:1},{id:\"leather_helmet\",Count:1,tag:{display:{color:8991416}}}]}"
           },
           {
             "type": "origins:execute_command",

@@ -3,10 +3,10 @@ execute if entity @a[tag=CORR] run origin set @a[tag=!CORR,nbt={ForgeCaps:{"orig
 execute unless entity @a[tag=CORR] run tag @a[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] add CORR
 tag @a[tag=CORR] add NAN
 # scoreboard players set @a[tag=CORR] Corruption 100
-item replace entity @a[tag=CORR] armor.head with minecraft:leather_helmet{display:{color:0}}
-item replace entity @a[tag=CORR] armor.chest with minecraft:leather_chestplate{display:{color:0}}
-item replace entity @a[tag=CORR] armor.legs with minecraft:leather_leggings{display:{color:0}}
-item replace entity @a[tag=CORR] armor.feet with minecraft:leather_boots{display:{color:0}}
+item replace entity @a[tag=CORR] armor.head with minecraft:chainmail_helmet
+item replace entity @a[tag=CORR] armor.chest with minecraft:chainmail_chestplate
+item replace entity @a[tag=CORR] armor.legs with minecraft:chainmail_leggings
+item replace entity @a[tag=CORR] armor.feet with minecraft:chainmail_boots
 # REMOVE_ORIGIN
 tag @a[nbt=!{ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] remove CORR
 tag @a[tag=!CORR] remove NAN
