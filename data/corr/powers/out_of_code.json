@@ -30,11 +30,15 @@
           },
           {
             "type": "origins:execute_command",
-            "command": "item replace entity @s armor.head with minecraft:chainmail_helmet"
+            "command": "tag @e[tag=!NAN,distance=..15,nbt={Brain:{}}] add DISTORTED"
           },
           {
             "type": "origins:execute_command",
-            "command": "stopsound @a[distance=..15] * minecraft:item.armor.equip_chainmail"
+            "command": "tag @e[tag=!NAN,distance=16..,nbt={Brain:{}}] remove DISTORTED"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "function corr:color_changing"
           }
         ]
       }
@@ -123,15 +127,11 @@
             "actions": [
               {
                 "type": "origins:execute_command",
-                "command": "execute in corr:out_of_code_dimension run tp @s[tag=!CORR_NERVES] ~ ~ ~"
+                "command": "execute in corr:out_of_code_dimension run tp @s[tag=!CORR_NERVES] ~ 1 ~"
               },
               {
                 "type": "origins:execute_command",
-                "command": "spreadplayers ~ ~ 0 1 false @s[tag=!CORR_NERVES]"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute as @e[tag=!NAN,tag=NAN_BOTTOM] at @s in corr:out_of_code_dimension run tp @s ~ 1 ~"
+                "command": "execute as @e[tag=!NAN,tag=DISTORTED] at @s in corr:out_of_code_dimension run tp @s ~ 1 ~"
               },
               {
                 "type": "origins:execute_command",

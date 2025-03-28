@@ -1,9 +1,9 @@
-    # CHOOSE_ORIGIN
+# CHOOSE_ORIGIN
 execute if entity @a[tag=CORR] run origin set @a[tag=!CORR,nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] origins:origin origins:human
 execute unless entity @a[tag=CORR] run tag @a[nbt={ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] add CORR
 tag @a[tag=CORR] add NAN
 # scoreboard players set @a[tag=CORR] Corruption 100
-item replace entity @a[tag=CORR] armor.head with minecraft:chainmail_helmet
+item replace entity @a[tag=CORR,nbt=!{Dimension:"corr:out_of_code_dimension"}] armor.head with minecraft:chainmail_helmet
 item replace entity @a[tag=CORR] armor.chest with minecraft:chainmail_chestplate
 item replace entity @a[tag=CORR] armor.legs with minecraft:chainmail_leggings
 item replace entity @a[tag=CORR] armor.feet with minecraft:chainmail_boots
@@ -101,30 +101,16 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
     execute store result score ClonesCount Timer run execute if entity @e[tag=CORR_CLONE]
     # DISTORT_REMOVE
     execute if score ClonesExist Timer > Two Timer run kill @e[tag=!CORR,tag=CORR_CLONE]
+    execute unless entity @e[tag=CORR_CLONE] run tag @e[tag=DISTORTED] remove DISTORTED
     # GLITCH
     execute store result score corrPosX Position run data get entity @a[tag=CORR,limit=1] Pos[0]
     execute store result score corrPosY Position run data get entity @a[tag=CORR,limit=1] Pos[1]
     execute store result score corrPosZ Position run data get entity @a[tag=CORR,limit=1] Pos[2]
     scoreboard players operation corrDim Position = corrPosX Position
-    scoreboard players operation corrDim Position %= corrPosZ Position
+    scoreboard players operation corrDim Position += corrPosZ Position
+    scoreboard players operation corrDim Position /= Ten Timer
     scoreboard players operation corrDim Position %= Three Timer
     execute as @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run title @s actionbar ["Universe: ",{"color":"light_purple","score":{"name":"corrDim","objective":"Position"}}," X: ",{"color":"light_purple","score":{"name":"corrPosX","objective":"Position"}}," Y: ",{"color":"light_purple","score":{"name":"corrPosY","objective":"Position"}}," Z: ",{"color":"light_purple","score":{"name":"corrPosZ","objective":"Position"}}]
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_1
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_2
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_3
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_5
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_6
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_8
-        execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
-        execute if score NaNBiome Timer matches 0 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_2
-        execute if score NaNBiome Timer matches 1 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_3
-        execute if score NaNBiome Timer matches 2 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_1
-        execute if score NaNBiome Timer matches 3 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
-        execute if score NaNBiome Timer matches 4 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
-        execute if score NaNBiome Timer matches 5 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
-    item replace entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] armor.head with minecraft:chainmail_helmet
-    stopsound @a[nbt={Dimension:"corr:out_of_code_dimension"}] * minecraft:item.armor.equip_chainmail
+    execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run function corr:color_changing
 
     # GLITCH_REMOVE
