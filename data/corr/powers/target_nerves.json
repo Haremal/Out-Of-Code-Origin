@@ -1,0 +1,20 @@
+{
+  "type": "origins:multiple",
+
+  "cut": {
+
+  },
+
+  "shoot": {
+
+  },
+
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "§b§lHold %s:§r\n§d- To §eGRAB§d objects and display their data§r\n§d- And hold §r[Sneak]§d to §eCORRUPT§d objects§r\n§d- The more corruption object has, the less his max health is and the more will teleport randomly"
+    }
+  ],
+  "name": "§a§nTarget Nerves",
+  "description": "§d"
+}

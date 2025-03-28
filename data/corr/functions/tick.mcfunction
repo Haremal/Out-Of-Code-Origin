@@ -97,11 +97,10 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
     # CORRUPTION_REMOVE
 
 # OUT_OF_CODE
-    # RELOCATE
+    # DISTORT
     execute store result score ClonesCount Timer run execute if entity @e[tag=CORR_CLONE]
-    # RELOCATE_REMOVE
+    # DISTORT_REMOVE
     execute if score ClonesExist Timer > Two Timer run kill @e[tag=!CORR,tag=CORR_CLONE]
-    execute if score ClonesExist Timer > Two Timer run tag @a[tag=CORR,tag=CORR_CLONE] remove CORR_CLONE
     # GLITCH
     execute store result score corrPosX Position run data get entity @a[tag=CORR,limit=1] Pos[0]
     execute store result score corrPosY Position run data get entity @a[tag=CORR,limit=1] Pos[1]
@@ -125,7 +124,7 @@ execute if score NaNBiome Timer matches 6.. run scoreboard players set NaNBiome 
         execute if score NaNBiome Timer matches 3 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
         execute if score NaNBiome Timer matches 4 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
         execute if score NaNBiome Timer matches 5 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
-    item replace entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] armor.head with minecraft:leather_helmet{display:{color:8991416}}
-    execute if entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] run stopsound @a * minecraft:item.armor.equip_leather
+    item replace entity @a[tag=CORR,nbt={Dimension:"corr:out_of_code_dimension"}] armor.head with minecraft:chainmail_helmet
+    stopsound @a[nbt={Dimension:"corr:out_of_code_dimension"}] * minecraft:item.armor.equip_chainmail
 
     # GLITCH_REMOVE

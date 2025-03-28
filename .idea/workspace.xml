@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Added tp through basic dimensions">
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Change idea">
+      <change afterPath="$PROJECT_DIR$/data/corr/powers/target_nerves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/tick.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/origins/corr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/origins/corr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/corr_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/areal_nerves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -242,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743029464551</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Change idea">
+      <option name="closed" value="true" />
+      <created>1743106806017</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1743106806017</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -263,6 +274,7 @@
     <MESSAGE value="Added clones to relocate power :3" />
     <MESSAGE value="Made dimension teleport. Backup for adding dimensions" />
     <MESSAGE value="Added tp through basic dimensions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tp through basic dimensions" />
+    <MESSAGE value="Change idea" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change idea" />
   </component>
 </project>

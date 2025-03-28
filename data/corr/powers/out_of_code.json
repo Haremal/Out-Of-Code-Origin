@@ -1,6 +1,6 @@
 {
   "type": "origins:multiple",
-  "relocate": {
+  "distort": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:delay",
@@ -10,31 +10,31 @@
         "actions": [
           {
             "type": "origins:execute_command",
-            "command": "tag @s add CORR_CLONE"
-          },
-          {
-            "type": "origins:execute_command",
             "command": "scoreboard players set ClonesExist Timer 0"
           },
           {
             "type": "origins:execute_command",
-            "command": "execute unless score ClonesCount Timer matches 5.. at @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"chainmail_boots\",Count:1},{id:\"chainmail_leggings\",Count:1},{id:\"chainmail_chestplate\",Count:1},{id:\"leather_helmet\",Count:1,tag:{display:{color:8991416}}}]}"
+            "command": "execute unless score ClonesCount Timer matches 3.. run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"chainmail_boots\",Count:1},{id:\"chainmail_leggings\",Count:1},{id:\"chainmail_chestplate\",Count:1},{id:\"chainmail_helmet\",Count:1}]}"
           },
           {
             "type": "origins:execute_command",
-            "command": "execute at @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run spreadplayers ~ ~ 0 7 false @e[tag=CORR_CLONE]"
+            "command": "spreadplayers ~ ~ 1 1 false @e[tag=CORR_CLONE]"
           },
           {
             "type": "origins:execute_command",
-            "command": "execute as @e[tag=CORR_CLONE] at @s run tp @s ~ ~ ~ facing entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest]"
+            "command": "execute as @e[tag=CORR_CLONE] run data modify entity @s Rotation set from entity @e[tag=CORR,limit=1] Rotation"
           },
           {
             "type": "origins:execute_command",
-            "command": "execute if entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run item replace entity @e[tag=CORR_CLONE] armor.head with minecraft:leather_helmet{display:{color:8991416}}"
+            "command": "execute as @e[tag=CORR_CLONE] run data modify entity @s Pos[1] set from entity @e[tag=CORR,limit=1] Pos[1]"
           },
           {
             "type": "origins:execute_command",
-            "command": "execute if entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest] run stopsound @a[distance=..15] * minecraft:item.armor.equip_leather"
+            "command": "item replace entity @s armor.head with minecraft:chainmail_helmet"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "stopsound @a[distance=..15] * minecraft:item.armor.equip_chainmail"
           }
         ]
       }
@@ -55,11 +55,16 @@
           "command": "execute if entity @e[tag=GRABBED]",
           "comparison": "==",
           "compare_to": 0
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
         }
       ]
     }
   },
-  "relocate_setup": {
+  "distort_setup": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:play_sound",
@@ -83,10 +88,9 @@
           "compare_to": 0
         },
         {
-          "type": "origins:command",
-          "command": "execute if entity @e[nbt={Brain:{}},tag=!NAN,distance=..15,limit=1,sort=nearest]",
-          "comparison": "==",
-          "compare_to": 1
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
         }
       ]
     }
@@ -192,7 +196,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- And hold it to §eRELOCATE§d constantly near the target§r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with objects in nerves§r\n§d- Out of code objects get corrupted and can't move except Corr who §eSPAWNS§d there but can't use his nerves"
+      "text": "§b§lClick %s:§r\n§d- And hold it to §eDISTORT§d the area §r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with objects in nerves§r\n§d- Out of code objects get corrupted and can't move except Corr who §eSPAWNS§d there but can't use his nerves"
     }
   ],
   "name": "§a§nOut of Code",

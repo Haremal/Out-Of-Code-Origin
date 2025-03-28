@@ -189,9 +189,9 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- Or hold it to §eSPREAD§d nerves and fly within them§r\n§d- And hold §r[Sneak]§d to §eTURN§d to nerves and move freely§r\n§d- Corr's nerves will hit objects while they're moving in addition to always stopping entirely objects within them"
+      "text": "§b§lClick %s:§r\n§d- To §eSPREAD§d areal nerves§r\n§d- And §r[Sneak]§d to §eTURN§d to areal nerves and move freely§r\n§d- Areal nerves hit objects while they're moving, always stops entirely objects within them and let Corr fly within them"
     }
   ],
-  "name": "§a§nCorr's Nerves",
+  "name": "§a§nAreal Nerves",
   "description": "§dCorr is the nervous system spreading throughout the code. He manipulates himself as he wants. He abuses his fake body and forcefully pull it with his nerves."
 }
