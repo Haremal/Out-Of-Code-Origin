@@ -1,11 +1,10 @@
 {
   "type": "origins:multiple",
 
-  "cut": {
-
+  "single_cut": {
   },
 
-  "shoot": {
+  "multi_cuts": {
 
   },
 

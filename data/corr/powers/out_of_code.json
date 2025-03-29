@@ -6,41 +6,8 @@
       "type": "origins:delay",
       "ticks": 10,
       "action": {
-        "type": "origins:and",
-        "actions": [
-          {
-            "type": "origins:execute_command",
-            "command": "scoreboard players set ClonesExist Timer 0"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "execute unless score ClonesCount Timer matches 3.. run summon minecraft:armor_stand ~ ~ ~ {Tags:[\"NAN\",\"CORR_CLONE\"],NoBasePlate:true,ArmorItems:[{id:\"chainmail_boots\",Count:1},{id:\"chainmail_leggings\",Count:1},{id:\"chainmail_chestplate\",Count:1},{id:\"chainmail_helmet\",Count:1}]}"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "spreadplayers ~ ~ 1 1 false @e[tag=CORR_CLONE]"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "execute as @e[tag=CORR_CLONE] run data modify entity @s Rotation set from entity @e[tag=CORR,limit=1] Rotation"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "execute as @e[tag=CORR_CLONE] run data modify entity @s Pos[1] set from entity @e[tag=CORR,limit=1] Pos[1]"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "tag @e[tag=!NAN,distance=..15,nbt={Brain:{}}] add DISTORTED"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "tag @e[tag=!NAN,distance=16..,nbt={Brain:{}}] remove DISTORTED"
-          },
-          {
-            "type": "origins:execute_command",
-            "command": "function corr:color_changing"
-          }
-        ]
+        "type": "origins:execute_command",
+        "command": "function corr:origin/out_of_code/distort/main"
       }
     },
     "key": {
@@ -103,87 +70,38 @@
   "glitch": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:dimension",
-                "dimension": "corr:out_of_code_dimension",
-                "inverted": true
-              },
-              {
-                "type": "origins:command",
-                "command": "execute if entity @e[tag=GRABBED]",
-                "comparison": "==",
-                "compare_to": 0
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "execute in corr:out_of_code_dimension run tp @s[tag=!CORR_NERVES] ~ 1 ~"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute as @e[tag=!NAN,tag=DISTORTED] at @s in corr:out_of_code_dimension run tp @s ~ 1 ~"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "kill @e[tag=CORR_NERVES,type=!player,scores={Timer=5..}]"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
-              }
-            ]
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:dimension",
-            "dimension": "corr:out_of_code_dimension"
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "execute if score corrDim Position matches 0 run execute in minecraft:overworld run tp @s ~ ~ ~"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute if score corrDim Position matches 1 run execute in minecraft:the_nether run tp @s ~ ~ ~"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "execute if score corrDim Position matches 2 run execute in minecraft:the_end run tp @s ~ ~ ~"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "spreadplayers ~ ~ 0 1 false @s"
-              }
-            ]
-          }
-        }
-      ]
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:dimension",
+        "dimension": "corr:out_of_code_dimension"
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function corr:origin/out_of_code/glitch/in"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "function corr:origin/out_of_code/glitch/out"
+      }
     },
-    "cooldown": 3,
+    "cooldown": 20,
     "key": {
       "key": "key.origins.secondary_active",
       "continuous": true
     },
     "condition": {
-      "type": "origins:sneaking"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=GRABBED]",
+          "comparison": "==",
+          "compare_to": 0
+        }
+      ]
     }
   },
 
@@ -196,7 +114,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- And hold it to §eDISTORT§d the area §r\n§d- And hold §r[Sneak]§d to §eGLITCH§d out with objects in nerves§r\n§d- Out of code objects get corrupted and can't move except Corr who §eSPAWNS§d there but can't use his nerves"
+      "text": "§b§lClick %s:§r\n§d- And hold it to §eDISTORT§d the area §r\n§d- And click §r[Sneak]§d to §eGLITCH§d out with distorted objects§r\n§d- Out of code objects get corrupted and can't move except Corr who §eSPAWNS§d there but can't use his powers"
     }
   ],
   "name": "§a§nOut of Code",

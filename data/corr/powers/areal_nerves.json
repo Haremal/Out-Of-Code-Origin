@@ -3,93 +3,54 @@
   "spread": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @e[tag=CORR_NERVES]",
-                "comparison": "==",
-                "compare_to": 0
-              },
-              {
-                "type": "origins:dimension",
-                "dimension": "corr:out_of_code_dimension",
-                "inverted": true
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "summon minecraft:block_display ~ ~ ~ {Tags:[\"CORR_NERVES\",\"NAN\"]}"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "data modify entity @e[tag=CORR_NERVES,limit=1] Rotation set from entity @s Rotation"
-              }
-            ]
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:command",
-            "command": "execute if entity @e[tag=CORR_NERVES,type=!player]",
-            "comparison": "==",
-            "compare_to": 1
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "kill @e[tag=CORR_NERVES,type=!player,scores={Timer=5..}]"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
-              }
-            ]
-          }
-        }
-      ]
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:command",
+        "command": "execute unless entity @e[tag=CORR_NERVES]",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "summon minecraft:block_display ~ ~ ~ {Tags:[\"CORR_NERVES\",\"NAN\"]}"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "function corr:origin/areal_nerves/spread/removal"
+      }
     },
     "key": {
       "key": "key.origins.primary_active",
       "continuous": false
     },
     "condition": {
-      "type": "origins:sneaking",
-      "inverted": true
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
     }
   },
   "spread_forward": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "execute as @e[tag=CORR_NERVES,type=!player] at @s run tp @s ^ ^ ^2"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "scoreboard players set NervesMoving Timer 0"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "function corr:origin/areal_nerves/spread/main"
     },
     "key": {
       "key": "key.origins.primary_active",
       "continuous": true
+    },
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
     }
   },
   "spread_fly": {
@@ -105,91 +66,45 @@
   "turn": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:if_else_list",
-      "actions": [
-        {
-          "condition": {
-            "type": "origins:and",
-            "conditions": [
-              {
-                "type": "origins:command",
-                "command": "execute if entity @s[tag=CORR_NERVES]",
-                "comparison": "==",
-                "compare_to": 0
-              },
-              {
-                "type": "origins:dimension",
-                "dimension": "corr:out_of_code_dimension",
-                "inverted": true
-              }
-            ]
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "kill @e[tag=CORR_NERVES,type=!player]"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[tag=NAN_BOTTOM,tag=!NAN] remove NAN_BOTTOM"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @e[type=!player,tag=NAN,tag=!THROW] add REMOVE"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "tag @s add CORR_NERVES"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "gamemode spectator @s"
-              }
-            ]
-          }
-        },
-        {
-          "condition": {
-            "type": "origins:command",
-            "command": "execute if entity @s[tag=CORR_NERVES]",
-            "comparison": "==",
-            "compare_to": 1
-          },
-          "action": {
-            "type": "origins:and",
-            "actions": [
-              {
-                "type": "origins:execute_command",
-                "command": "tag @s remove CORR_NERVES"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "summon minecraft:block_display ~ ~ ~ {Tags:[\"CORR_NERVES\",\"NAN\"]}"
-              },
-              {
-                "type": "origins:execute_command",
-                "command": "gamemode survival @s"
-              }
-            ]
-          }
-        }
-      ]
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:command",
+        "command": "execute unless entity @s[tag=CORR_NERVES]",
+        "comparison": "==",
+        "compare_to": 1
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function corr:origin/areal_nerves/turn/in"
+      },
+      "else_action": {
+        "type": "origins:execute_command",
+        "command": "function corr:origin/areal_nerves/turn/out"
+      }
     },
-      "key": {
+    "key": {
       "key": "key.origins.primary_active",
       "continuous": false
     },
     "condition": {
-      "type": "origins:sneaking"
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        }
+      ]
     }
   },
 
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- To §eSPREAD§d areal nerves§r\n§d- And §r[Sneak]§d to §eTURN§d to areal nerves and move freely§r\n§d- Areal nerves hit objects while they're moving, always stops entirely objects within them and let Corr fly within them"
+      "text": "§b§lClick %s:§r\n§d- To §eSPREAD§d areal nerves§r\n§d- And §r[Sneak]§d to §eTURN§d to areal nerves and move freely§r\n§d- Within areal nerves objects entirely stop, Corr flies and if they're moving, they're destroying everything"
     }
   ],
   "name": "§a§nAreal Nerves",

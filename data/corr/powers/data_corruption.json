@@ -4,37 +4,8 @@
   "grab": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "execute unless entity @e[tag=THROW] positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run summon minecraft:block_display ~ ~-100 ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},block_state:{Name:\"purple_wool\"},NoGravity:1b,Tags:[\"THROW\",\"NAN\"]}"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "execute at @s positioned ~ ~0.7 ~ run execute positioned ^-0.4 ^ ^ facing entity @e[tag=GRABBED,limit=1] feet run tp @e[tag=THROW] ^ ^ ^ ~ ~-5"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "execute positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run scoreboard players set @e[tag=THROW] Timer 0"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "execute unless entity @e[tag=GRABBED] positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] add GRABBED"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "tp @e[tag=GRABBED,limit=1] ^ ^1 ^9"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "effect give @e[tag=GRABBED] levitation 1 1 true"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "effect give @e[tag=GRABBED] glowing 1 1 true"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "function corr:origin/data_corruption/grab/main"
     },
     "key": {
       "key": "key.use",
@@ -67,17 +38,8 @@
   "corrupt": {
     "type": "origins:active_self",
     "entity_action": {
-      "type": "origins:and",
-      "actions": [
-        {
-          "type": "origins:execute_command",
-          "command": "scoreboard players add @e[tag=GRABBED] Corruption 1"
-        },
-        {
-          "type": "origins:execute_command",
-          "command": "damage @e[tag=GRABBED,limit=1] 0.0000000001"
-        }
-      ]
+      "type": "origins:execute_command",
+      "command": "function corr:origin/data_corruption/corrupt"
     },
     "key": {
       "key": "key.use",
