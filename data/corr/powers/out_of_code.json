@@ -7,11 +7,11 @@
       "ticks": 10,
       "action": {
         "type": "origins:execute_command",
-        "command": "function corr:origin/out_of_code/distort/main"
+        "command": "function corr:origin/out_of_code/distort"
       }
     },
     "key": {
-      "key": "key.origins.secondary_active",
+      "key": "key.loadToolbarActivator",
       "continuous": true
     },
     "condition": {
@@ -35,14 +35,14 @@
       ]
     }
   },
-  "distort_setup": {
+  "distort_sound": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:play_sound",
       "sound": "minecraft:entity.experience_orb.pickup"
     },
     "key": {
-      "key": "key.origins.secondary_active",
+      "key": "key.loadToolbarActivator",
       "continuous": false
     },
     "condition": {
@@ -86,7 +86,7 @@
     },
     "cooldown": 20,
     "key": {
-      "key": "key.origins.secondary_active",
+      "key": "key.loadToolbarActivator",
       "continuous": true
     },
     "condition": {

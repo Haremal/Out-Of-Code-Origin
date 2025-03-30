@@ -1,8 +1,8 @@
-#
+# CREATION
 execute unless entity @e[tag=GRABBED] positioned ^ ^ ^5 run tag @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] add GRABBED
-execute unless entity @e[tag=THROW] positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run summon minecraft:block_display ~ ~-100 ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},block_state:{Name:"purple_wool"},NoGravity:1b,Tags:["THROW","NAN"]}
+execute unless entity @e[tag=THROW] positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run summon minecraft:block_display ~ ~ ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},Tags:["THROW","NAN","WOOL"]}
 execute positioned ~ ~0.7 ~ run execute positioned ^-0.4 ^ ^ facing entity @e[tag=GRABBED,limit=1] feet run tp @e[tag=THROW] ^ ^ ^ ~ ~-5
-execute positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run scoreboard players set @e[tag=THROW] Timer 0
+execute positioned ^ ^ ^5 run execute at @e[distance=..5,tag=!NAN,limit=1,sort=nearest,nbt={Brain:{}}] run scoreboard players set @e[tag=THROW] Timer 1
 # GRABBING
 tp @e[tag=GRABBED,limit=1] ^ ^1 ^9
 effect give @e[tag=GRABBED] levitation 1 1 true

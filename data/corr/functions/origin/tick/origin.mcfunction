@@ -8,6 +8,7 @@ item replace entity @a[tag=CORR,nbt=!{Dimension:"corr:out_of_code_dimension"}] a
 item replace entity @a[tag=CORR] armor.chest with minecraft:chainmail_chestplate
 item replace entity @a[tag=CORR] armor.legs with minecraft:chainmail_leggings
 item replace entity @a[tag=CORR] armor.feet with minecraft:chainmail_boots
+stopsound @a * minecraft:item.armor.equip_chain
 # REMOVAL
 tag @a[nbt=!{ForgeCaps:{"origins:origins":{Origins:{"origins:origin":"corr:corr"}}}}] remove CORR
 tag @a[tag=!CORR] remove NAN

@@ -33,5 +33,3 @@ execute if score NaNBiome Timer matches 2 at @a[nbt={Dimension:"corr:out_of_code
 execute if score NaNBiome Timer matches 3 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_4
 execute if score NaNBiome Timer matches 4 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_7
 execute if score NaNBiome Timer matches 5 at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_9
-# GLITCHY SOUNDS
-stopsound @a * minecraft:item.armor.equip_chain

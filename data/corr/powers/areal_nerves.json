@@ -20,7 +20,7 @@
       }
     },
     "key": {
-      "key": "key.origins.primary_active",
+      "key": "key.origins.secondary_active",
       "continuous": false
     },
     "condition": {
@@ -45,7 +45,7 @@
       "command": "function corr:origin/areal_nerves/spread/main"
     },
     "key": {
-      "key": "key.origins.primary_active",
+      "key": "key.origins.secondary_active",
       "continuous": true
     },
     "condition": {
@@ -83,7 +83,7 @@
       }
     },
     "key": {
-      "key": "key.origins.primary_active",
+      "key": "key.origins.secondary_active",
       "continuous": false
     },
     "condition": {

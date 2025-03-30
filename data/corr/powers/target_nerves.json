@@ -1,19 +1,63 @@
 {
   "type": "origins:multiple",
 
-  "single_cut": {
+  "cut": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function corr:origin/target_nerves/cut"
+    },
+    "key": {
+      "key": "key.saveToolbarActivator",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        }
+      ]
+    }
   },
 
-  "multi_cuts": {
-
+  "ravage": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:execute_command",
+      "command": "function corr:origin/target_nerves/ravage"
+    },
+    "key": {
+      "key": "key.saveToolbarActivator",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        }
+      ]
+    }
   },
 
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lHold %s:§r\n§d- To §eGRAB§d objects and display their data§r\n§d- And hold §r[Sneak]§d to §eCORRUPT§d objects§r\n§d- The more corruption object has, the less his max health is and the more will teleport randomly"
+      "text": "§b§lClick %s:§r\n§d- To §eCUT§d anything in front§r\n§d- Or hold it with §r[Sneak]§d to §eRAVAGE§d objects around§r\n§d- Unstoppable slashes can destroy indestructible objects and hurt livings really badly"
     }
   ],
   "name": "§a§nTarget Nerves",
-  "description": "§d"
+  "description": "§dExperienced Corr is very accurate if he really focus and with that he's also deadly. He can use his nerves on targeting specific objects with more force."
 }

@@ -9,4 +9,4 @@ execute as @e[tag=CORR_CLONE] run data modify entity @s Pos[1] set from entity @
 # DISTORTING
 tag @e[tag=!NAN,distance=..15,nbt={Brain:{}}] add DISTORTED
 tag @e[tag=!NAN,distance=16..,nbt={Brain:{}}] remove DISTORTED
-function corr:origin/out_of_code/color_changing
+function corr:origin/tick/colorful
