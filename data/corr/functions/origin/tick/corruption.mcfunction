@@ -1,10 +1,10 @@
 # TIMER
 scoreboard players add @e[scores={Corruption=10..}] Timer 1
-scoreboard players set @e[scores={Timer=10001..,Corruption=10..}] Timer 0
-scoreboard players set @e[scores={Timer=5001..,Corruption=40..}] Timer 0
-scoreboard players set @e[scores={Timer=3001..,Corruption=70..}] Timer 0
-scoreboard players set @e[scores={Timer=1001..,Corruption=90..}] Timer 0
-scoreboard players set @e[scores={Timer=1001..,Corruption=90..}] Timer 0
+scoreboard players set @e[scores={Timer=3001..,Corruption=10..}] Timer 0
+scoreboard players set @e[scores={Timer=2001..,Corruption=40..}] Timer 0
+scoreboard players set @e[scores={Timer=1001..,Corruption=70..}] Timer 0
+scoreboard players set @e[scores={Timer=501..,Corruption=90..}] Timer 0
+scoreboard players set @e[scores={Timer=201..,Corruption=100..}] Timer 0
 # TELEPORT
 execute as @e[scores={Timer=3000..,Corruption=10..}] at @s run spreadplayers ~ ~ 0 1 false @s
 execute as @e[scores={Timer=2000..,Corruption=40..}] at @s run spreadplayers ~ ~ 0 1 false @s

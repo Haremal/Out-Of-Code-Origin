@@ -1,9 +1,9 @@
 {
   "powers": [
-    "corr:areal_nerves",
     "corr:data_corruption",
-    "corr:out_of_code",
-    "corr:target_nerves"
+    "corr:areal_nerves",
+    "corr:target_nerves",
+    "corr:out_of_code"
   ],
   "icon": {
     "item": "minecraft:music_disc_11"

@@ -23,13 +23,6 @@
           "type": "origins:dimension",
           "dimension": "corr:out_of_code_dimension",
           "inverted": true
-        },
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:empty"
-          }
         }
       ]
     }
@@ -46,19 +39,7 @@
       "continuous": true
     },
     "condition": {
-      "type": "origins:and",
-      "conditions": [
-        {
-          "type": "origins:equipped_item",
-          "equipment_slot": "mainhand",
-          "item_condition": {
-            "type": "origins:empty"
-          }
-        },
-        {
-          "type": "origins:sneaking"
-        }
-      ]
+      "type": "origins:sneaking"
     }
   },
 

@@ -114,9 +114,9 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- And hold it to §eDISTORT§d the area §r\n§d- And click §r[Sneak]§d to §eGLITCH§d out with distorted objects§r\n§d- Out of code objects get corrupted and can't move except Corr who §eSPAWNS§d there but can't use his powers"
+      "text": "§b§lClick %s:§r\n§d- And hold it to §eDISTORT§d the area but only as corrupted§r\n§d- And click §r[Sneak]§d to §eGLITCH§d out with distorted objects§r\n§d- Out of code objects corrupt and freeze. Here Corr §eSPAWNS§d, can move, can't use powers and corrupt quickly"
     }
   ],
   "name": "§a§nOut of Code",
-  "description": "§dCorr found his home not to be within the code or exists. This place can't be accessed by not corrupted beings and corrupted ones can't move in it except Corr."
+  "description": "§dCorr's home isn't within the code of existence and can't be reached by anybody. Here everyone freezes and corrupts, while Corr can move but corrupts quickly."
 }

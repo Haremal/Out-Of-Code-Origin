@@ -1,20 +1,18 @@
 TODO:
 - REDESIGN POWER SYSTEM
-    - NEW POWER: TARGET-NERVES (GREEN)
     - NEW PASSIVE: NAN HEALTH POWER (YELLOW) - THE VERY THING THAT MADE HIM SUFFER
-        - WHEN CORR IS HIT HIS CORRUPTION GROWS
         - CORR CAN'T DIE, OPEN GUI, PICK UP ITEMS, BE SEEN BY MOBS
+        - WHEN CORR IS HIT HIS CORRUPTION GROWS (ONLY DIRECT PUNCHES)
         - TRANSPARENT TINT TO CORR
         - SHADER DESATURATE WITHIN 100 BLOCKS DISTANCE FROM CORR
+        - CORR DON'T TAKE FALL DMG, DROWNING DMG OR ANY OTHER NATURAL DMG
     - Out of Code (CHANGES):
-        - GLITCH CONSTANTLY CORRUPTS ALL OBJECTS IN DIMENSION
-        - Corr can use his [X] ability only fully corrupted
-        - When Corr is fully corrupted then he has eyes
-        - When Corr is not corrupted then he has hood
-        - When Corr is in dimension he becomes 100% Corrupted
-        - The more corrupted Corr is the faster and stronger he is
-        - When Corr leaves the dimension he stops being Corrupted
-        - VERY Fast in dimension while crouching and everything else stops
+        - AFTER NAN HEALTH:
+            - Corr can use his [V] ability only fully corrupted
+            - When Corr is fully corrupted then he has eyes
+            - When Corr is in dimension he becomes 100% Corrupted
+            - The more corrupted Corr is the faster and stronger he is
+            - When Corr leaves the dimension he stops being Corrupted
     - NEW DEBUFFS (RED)
         - NO HUNGER LEVEL
         - NO ARMOR LEVEL
@@ -27,9 +25,10 @@ TODO:
     - REVERTED MC MUSIC IN DIMENSION AND INSANITY MUSIC FOR CORR OUTSIDE OF DIMENSION (GLITCH)
     - [BADGUY] JUMPSCARES TO CORR
 - PUT THE CORR'S STORY IN THE TORN NOTES (DESCRIBING SOME MOMENTS OF HIS LIFE AND CHARACTER DEVELOPMENT) IN RANDOM MEDIEVAL, ANCIENT STRUCTURES
-- ORIGIN FOR 1 PERSON ONLY AND JSON DIMENSIONS
+- ORIGIN FOR 1 PERSON ONLY AND PREDICATE DIMENSIONS
 - MAKE ALLLLLLL POWERS: NOT WORK FOR ONE ANOTHER, HAVE LONG COOLDOWNS
 - MAKE SIMPLE LEVEL UP SYSTEM (INEXPERIENCED/EXPERIENCED) FOR CUTTING POWER AND COOLDOWNS
+- CARPET MOD? (FAKE PLAYERS)
 
 https://origins.readthedocs.io/en/1.10.0/
 https://mcstacker.net/1.20.php
