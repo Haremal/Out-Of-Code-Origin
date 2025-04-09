@@ -5,5 +5,5 @@ scoreboard objectives add Position dummy
 scoreboard players set Three Timer 3
 scoreboard players set Ten Timer 10
 
-# NervesMoving, ClonesExist, ClonesCount, HealthData, NaNBiome, NaNBottomsCount, NaNTopsCount
+# NervesMoving, ClonesCount, HealthData, NaNBiome, NaNEndsCount, CorruptedTP
 

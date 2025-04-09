@@ -16,7 +16,7 @@ execute if score NaNBiome Timer matches 3 run item replace entity @a[tag=CORR] a
 execute if score NaNBiome Timer matches 4 run item replace entity @a[tag=CORR] armor.head with minecraft:chainmail_helmet{Trim:{material:"minecraft:iron",pattern:"minecraft:rib"}}
 execute if score NaNBiome Timer matches 5 run item replace entity @a[tag=CORR] armor.head with minecraft:chainmail_helmet{Trim:{material:"minecraft:iron",pattern:"minecraft:sentry"}}
 # CLONES GLITCHY EYES
-item replace entity @e[tag=CORR_CLONE] armor.head from entity @s armor.head
+item replace entity @e[tag=CORR_CLONE] armor.head from entity @a[tag=CORR,limit=1] armor.head
 # COLORFUL SKY IN DIMENSION
 execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_1
 execute at @a[nbt={Dimension:"corr:out_of_code_dimension"}] run fillbiome ~-15 ~-1 ~-15 ~15 ~15 ~15 corr:nan_biome_2

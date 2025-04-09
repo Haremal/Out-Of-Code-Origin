@@ -1,10 +1,6 @@
 {
     "replace": false,
     "origins": [
-        {
-            "origins": [
-                "corr:corr"
-            ]
-        }
+        "corr:corr"
     ]
 }

@@ -1,0 +1,240 @@
+{
+  "type": "origins:multiple",
+  "teleport": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "tp @s ^ ^ ^10"
+        },
+        {
+          "type": "origins:play_sound",
+          "sound": "minecraft:entity.experience_orb.pickup"
+        }
+      ]
+    },
+    "key": {
+      "key": "key.loadToolbarActivator",
+      "continuous": false
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:scoreboard",
+          "objective": "Corruption",
+          "comparison": "<",
+          "compare_to": 100
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=GRABBED]",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "distort": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:delay",
+      "ticks": 10,
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function corr:origin/glitch/distort"
+          },
+          {
+            "type": "origins:play_sound",
+            "sound": "minecraft:entity.experience_orb.pickup"
+          }
+        ]
+      }
+    },
+    "key": {
+      "key": "key.loadToolbarActivator",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:scoreboard",
+          "objective": "Corruption",
+          "comparison": "==",
+          "compare_to": 100
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=GRABBED]",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=DISTORT]",
+          "comparison": "==",
+          "compare_to": 1
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "distort_punch": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:target_action",
+      "action": {
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "execute unless entity @e[tag=DISTORT] run tag @s[tag=!NAN,nbt={Brain:{}}] add DISTORT"
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "scoreboard players set DISTORTION Timer 0"
+          }
+        ]
+      }
+    },
+    "key": {
+      "key": "key.loadToolbarActivator",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:scoreboard",
+          "objective": "Corruption",
+          "comparison": "==",
+          "compare_to": 100
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=GRABBED]",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:dimension",
+          "dimension": "corr:out_of_code_dimension",
+          "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        }
+      ]
+    }
+  },
+
+  "exit": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:if_else",
+      "condition": {
+        "type": "origins:dimension",
+        "dimension": "corr:out_of_code_dimension"
+      },
+      "if_action": {
+        "type": "origins:execute_command",
+        "command": "function corr:origin/glitch/exit/in"
+      },
+      "else_action": {
+        "type": "origins:if_else",
+        "condition": {
+          "type": "origins:scoreboard",
+          "objective": "Corruption",
+          "comparison": "==",
+          "compare_to": 100
+        },
+        "if_action": {
+          "type": "origins:execute_command",
+          "command": "scoreboard players set CorruptedTP Timer 1"
+        },
+        "else_action": {
+          "type": "origins:execute_command",
+          "command": "function corr:origin/glitch/exit/out"
+        }
+      }
+    },
+    "cooldown": 40,
+    "key": {
+      "key": "key.loadToolbarActivator",
+      "continuous": true
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:sneaking"
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=GRABBED]",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
+        }
+      ]
+    }
+  },
+
+  "spawn": {
+    "type": "origins:modify_player_spawn",
+    "dimension": "corr:out_of_code_dimension",
+    "spawn_strategy": "center"
+  },
+
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "§b§lClick %s:§r\n§d- To §eTELEPORT§d forward (or §eDISTORT§d reality if corrupted)§r\n§d- And §r[Sneak]§d to §eGLITCH§d out (with objects if corrupted)§r\n§d- Corr §eSPAWNS§d out of code where everyone else freeze and corrupts. Corrupted Corr is able to alter the code of reality"
+    }
+  ],
+  "name": "§a§nGlitch",
+  "description": "§dCorr's home isn't within the code of existence and can't be reached by anybody. Here everyone freezes and corrupts, while Corr can move but corrupts quickly."
+}

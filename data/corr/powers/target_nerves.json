@@ -22,6 +22,11 @@
           "type": "origins:dimension",
           "dimension": "corr:out_of_code_dimension",
           "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
         }
       ]
     }
@@ -47,6 +52,11 @@
           "type": "origins:dimension",
           "dimension": "corr:out_of_code_dimension",
           "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
         }
       ]
     }
@@ -59,5 +69,5 @@
     }
   ],
   "name": "§a§nTarget Nerves",
-  "description": "§dExperienced Corr is very accurate if he really focus and with that he's also deadly. He can use his nerves on targeting specific objects with more force."
+  "description": "§dCorr is very accurate if he really focus and with that he's also deadly. He can use his nerves on targeting specific objects with more force and way more power."
 }

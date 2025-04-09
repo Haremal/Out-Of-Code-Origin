@@ -1,0 +1,39 @@
+{
+  "type": "origins:multiple",
+  "hunger": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+      "type": "origins:exhaust",
+      "amount": 100
+    },
+    "interval": 1
+  },
+  "no_eat": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:food"
+    }
+  },
+  "no_sleep": {
+    "type": "origins:prevent_sleep",
+    "message": "ERROR"
+  },
+  "no_anchor": {
+    "type": "origins:prevent_block_use",
+    "block_condition": {
+      "type": "origins:block",
+      "block": "minecraft:respawn_anchor"
+    }
+  },
+  "no_ride": {
+    "type": "origins:prevent_entity_use"
+  },
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/info.png",
+      "text": "§b§lDebuff:§r\n§d- Corr suffers from hunger, can't eat, use armor or sleep§r\n§d- §eNaN Health§d prevent Corr from using guis or getting items§r\n§d- Corr can't die to anything which is his greatest power, but also not being able to live makes it his biggest curse"
+    }
+  ],
+  "name": "§c§nInstability",
+  "description": "§dCorr is very powerful, but his chances for normal life have been drastically reduced. His only purpose now is to destroy and he can't do anything outside of that."
+}

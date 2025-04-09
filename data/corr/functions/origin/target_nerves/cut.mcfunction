@@ -7,9 +7,5 @@ kill @e[tag=LOOK]
 # SOUND
 playsound minecraft:entity.generic.explode ambient @a[distance=..150] ~ ~ ~ 10 2 1
 # DESTRUCTION
-summon minecraft:block_display ^ ^1.5 ^10 {Tags:["NAN","CUT_DESTROY"]}
-execute if predicate corr:true-false run summon minecraft:block_display ^4 ^0.5 ^10 {Tags:["NAN","CUT_DESTROY"]}
-execute if predicate corr:true-false run summon minecraft:block_display ^-4 ^2.5 ^10 {Tags:["NAN","CUT_DESTROY"]}
-execute unless predicate corr:true-false run summon minecraft:block_display ^-4 ^0.5 ^10 {Tags:["NAN","CUT_DESTROY"]}
-execute unless predicate corr:true-false run summon minecraft:block_display ^4.5 ^2 ^10 {Tags:["NAN","CUT_DESTROY"]}
-execute as @e[tag=CUT_DESTROY] at @s run tp @s ~ ~ ~ facing entity @e[tag=CORR,limit=1]
+execute at @e[tag=CUT] run summon minecraft:block_display ~ ~ ~ {Tags:["NAN","CUT_DESTROY"]}
+execute as @e[tag=CUT_DESTROY] run data modify entity @s Rotation set from entity @e[tag=CUT,limit=1,sort=nearest] Rotation

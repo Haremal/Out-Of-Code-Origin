@@ -1,9 +1,11 @@
 {
   "powers": [
+    "corr:nan_health",
     "corr:data_corruption",
     "corr:areal_nerves",
     "corr:target_nerves",
-    "corr:out_of_code"
+    "corr:glitch",
+    "corr:instability"
   ],
   "icon": {
     "item": "minecraft:music_disc_11"

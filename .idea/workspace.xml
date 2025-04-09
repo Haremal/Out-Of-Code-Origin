@@ -4,28 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/cut.mcfunction" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/ravage.mcfunction" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/nerves.mcfunction" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/removal.mcfunction" afterDir="false" />
+    <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Small predicate file addition">
+      <change afterPath="$PROJECT_DIR$/data/corr/functions/origin/glitch/distort.mcfunction" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/code_altering.mcfunction" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/powers/for_enemies.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/powers/instability.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/corr/powers/nan_health.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/main/load.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/main/load.mcfunction" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/functions/main/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/main/tick.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/spread/nerves.mcfunction" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/data_corruption/corruption.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/corruption.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/data_corruption/grab/main.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/data_corruption/grab.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/data_corruption/grab/removal.mcfunction" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/main.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/origin.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/color_changing.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/colorful.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/dimension.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/dimension.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/distort/main.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/distort.mcfunction" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/distort/removal.mcfunction" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/spread/main.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/spread/forward.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/turn/in.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/turn/in.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/turn/out.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/areal_nerves/turn/out.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/distort.mcfunction" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/glitch/in.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/glitch/exit/in.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/out_of_code/glitch/out.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/glitch/exit/out.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/cut.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/cut.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/colorful.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/colorful.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/corruption.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/corruption.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/dimension.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/dimension.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/nerves.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/nerves.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/origin.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/origin.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/removal.mcfunction" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/origins/corr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/origins/corr.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/areal_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/areal_nerves.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/data_corruption.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/out_of_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/glitch.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/corr/powers/target_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/target_nerves.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/origins/origin_layers/origin.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/origins/origin_layers/origin.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,11 +107,11 @@
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_1\datapacks\Out-Of-Code-Origin\data\corr\worldgen\biome" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_4\datapacks\Out-Of-Code-Origin\data\corr\predicates" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_4\datapacks\Out-Of-Code-Origin\data\corr\functions\origin\data_corruption" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_4\datapacks\Out-Of-Code-Origin\data\corr\functions\origin\tick" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_4\datapacks\Out-Of-Code-Origin\data\corr\functions\origin\out_of_code" />
       <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_4\datapacks\Out-Of-Code-Origin\data\corr\functions\origin" />
-      <recent name="C:\Users\mikes\AppData\Roaming\.minecraft\saves\test_0_6_4\datapacks\Out-Of-Code-Origin\data\corr\functions\origin\areal_nerves\turn" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -300,7 +307,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743283016968</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Entirely new ability and keybindings changed">
+      <option name="closed" value="true" />
+      <created>1743332175397</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1743332175397</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Small predicate file addition">
+      <option name="closed" value="true" />
+      <created>1743367834700</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1743367834700</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,6 +359,8 @@
     <MESSAGE value="In process of redesigning some powers" />
     <MESSAGE value="v0.4 Still some stuff to do. But a lot already done. Resource Pack required!!!" />
     <MESSAGE value="Big fokin update and code redesign (finally readable)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Big fokin update and code redesign (finally readable)" />
+    <MESSAGE value="Entirely new ability and keybindings changed" />
+    <MESSAGE value="Small predicate file addition" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small predicate file addition" />
   </component>
 </project>

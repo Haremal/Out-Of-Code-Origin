@@ -34,6 +34,11 @@
         {
           "type": "origins:sneaking",
           "inverted": true
+        },
+        {
+          "type": "origins:gamemode",
+          "gamemode": "spectator",
+          "inverted": true
         }
       ]
     }
@@ -42,7 +47,7 @@
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "function corr:origin/areal_nerves/spread/main"
+      "command": "function corr:origin/areal_nerves/spread/forward"
     },
     "key": {
       "key": "key.origins.secondary_active",
@@ -69,7 +74,7 @@
       "type": "origins:if_else",
       "condition": {
         "type": "origins:command",
-        "command": "execute unless entity @s[tag=CORR_NERVES]",
+        "command": "execute unless entity @e[tag=CORR_SPEC]",
         "comparison": "==",
         "compare_to": 1
       },
@@ -104,7 +109,7 @@
   "badges": [
     {
       "sprite": "origins:textures/gui/badge/active.png",
-      "text": "§b§lClick %s:§r\n§d- To §eSPREAD§d areal nerves§r\n§d- And §r[Sneak]§d to §eTURN§d to areal nerves and move freely§r\n§d- Within areal nerves objects entirely stop, Corr flies and if they're moving, they're destroying everything"
+      "text": "§b§lClick %s:§r\n§d- To §eSPREAD§d nerves and move objects (as turn too)§r\n§d- And §r[Sneak]§d to §eTURN§d to areal nerves and move freely§r\n§d- Within areal nerves objects entirely stop, Corr flies and if they're moving, they're destroying everything"
     }
   ],
   "name": "§a§nAreal Nerves",

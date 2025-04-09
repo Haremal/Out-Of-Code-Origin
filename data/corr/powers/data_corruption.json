@@ -1,6 +1,5 @@
 {
   "type": "origins:multiple",
-
   "grab": {
     "type": "origins:active_self",
     "entity_action": {
