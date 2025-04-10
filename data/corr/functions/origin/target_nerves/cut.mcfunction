@@ -1,5 +1,5 @@
 # VISUAL
-summon minecraft:block_display ~ ~ ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},Tags:["NAN","CUT","WOOL"]}
+summon minecraft:block_display ~ ~ ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},Tags:["NAN","CUT"]}
 summon minecraft:block_display ^ ^1.5 ^10 {Tags:["NAN","LOOK"]}
 execute if predicate corr:true-false run tp @e[tag=CUT] ^-4 ^2.5 ^10 facing entity @e[tag=LOOK,limit=1]
 execute unless predicate corr:true-false run tp @e[tag=CUT] ^4.5 ^2 ^10 facing entity @e[tag=LOOK,limit=1]

@@ -5,7 +5,8 @@
     "corr:areal_nerves",
     "corr:target_nerves",
     "corr:glitch",
-    "corr:instability"
+    "corr:instability",
+    "corr:cooldowns"
   ],
   "icon": {
     "item": "minecraft:music_disc_11"

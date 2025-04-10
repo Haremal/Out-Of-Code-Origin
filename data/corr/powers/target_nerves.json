@@ -29,18 +29,19 @@
           "inverted": true
         }
       ]
-    }
+    },
+    "cooldown": 20
   },
 
   "ravage": {
     "type": "origins:active_self",
     "entity_action": {
       "type": "origins:execute_command",
-      "command": "function corr:origin/target_nerves/ravage"
+      "command": "scoreboard players set Ravage Timer 1"
     },
     "key": {
       "key": "key.saveToolbarActivator",
-      "continuous": true
+      "continuous": false
     },
     "condition": {
       "type": "origins:and",
@@ -59,6 +60,10 @@
           "inverted": true
         }
       ]
+    },
+    "cooldown": 100,
+    "hud_render": {
+      "bar_index": 5
     }
   },
 

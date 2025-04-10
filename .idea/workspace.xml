@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a0531ef-a663-40f8-af3d-24c92d31ecda" name="Changes" comment="Huge update for v0.5. A LOT of new content, new powers and more (almost all finished)">
+      <change afterPath="$PROJECT_DIR$/data/corr/powers/cooldowns.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NOTE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NOTE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/main/tick.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/main/tick.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/cut.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/cut.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/target_nerves/ravage.mcfunction" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/functions/origin/tick/nerves.mcfunction" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/functions/origin/tick/nerves.mcfunction" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/origins/corr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/origins/corr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/areal_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/areal_nerves.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/for_enemies.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/for_enemies.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/glitch.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/glitch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/corr/powers/target_nerves.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/corr/powers/target_nerves.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +53,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Haremal/Out-Of-Code-Origin&quot;,
+    &quot;url&quot;: &quot;https://github.com/Haremal/Out-Of-Code-Origin.git&quot;,
     &quot;accountId&quot;: &quot;04c15422-2f88-42d2-b219-6d3fcc3541cf&quot;
   }
 }</component>

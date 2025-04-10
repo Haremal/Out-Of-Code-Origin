@@ -15,8 +15,18 @@
         "command": "summon minecraft:block_display ~ ~ ~ {Tags:[\"CORR_NERVES\",\"NAN\"]}"
       },
       "else_action": {
-        "type": "origins:execute_command",
-        "command": "function corr:origin/areal_nerves/spread/removal"
+        "type": "origins:and",
+        "actions": [
+          {
+            "type": "origins:execute_command",
+            "command": "function corr:origin/areal_nerves/spread/removal"
+          },
+          {
+            "type": "origins:change_resource",
+            "resource": "corr:cooldowns_spread",
+            "change": 200
+          }
+        ]
       }
     },
     "key": {
@@ -26,6 +36,12 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "corr:cooldowns_spread",
+          "comparison": "==",
+          "compare_to": 0
+        },
         {
           "type": "origins:dimension",
           "dimension": "corr:out_of_code_dimension",
@@ -62,7 +78,7 @@
     "type": "origins:creative_flight",
     "condition": {
       "type": "origins:command",
-      "command": "execute if entity @e[tag=CORR_NERVES,type=!player,distance=..21]",
+      "command": "execute if entity @e[tag=CORR_NERVES,distance=..21]",
       "comparison": "==",
       "compare_to": 1
     }
@@ -94,6 +110,18 @@
     "condition": {
       "type": "origins:and",
       "conditions": [
+        {
+          "type": "origins:resource",
+          "resource": "corr:cooldowns_spread",
+          "comparison": "==",
+          "compare_to": 0
+        },
+        {
+          "type": "origins:command",
+          "command": "execute if entity @e[tag=CORR_NERVES,tag=!CORR_SPEC]",
+          "comparison": "==",
+          "compare_to": 0
+        },
         {
           "type": "origins:sneaking"
         },

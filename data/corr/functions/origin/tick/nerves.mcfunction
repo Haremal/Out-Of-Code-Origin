@@ -40,10 +40,14 @@
     kill @e[tag=NAN_DESTROYER,scores={Timer=35..}]
     # SOUND
     execute if score NervesMoving Timer matches ..1 at @e[tag=CORR_NERVES] run playsound minecraft:entity.generic.explode ambient @a[distance=..150] ~ ~ ~ 10 2 1
+    # WATER FIX
+    execute at @e[tag=CORR_NERVES] positioned over world_surface run fill ~-20 ~-5 ~-20 ~20 ~-1 ~20 black_concrete replace water
     # TURN
     tp @e[tag=CORR_SPEC] @a[tag=CORR,limit=1,gamemode=spectator]
     execute if entity @e[tag=CORR_SPEC] run scoreboard players set NervesMoving Timer 0
 # CUT
+    # SETUP
+    tag @e[tag=CUT,scores={Timer=1..}] add WOOL
     # DESTRUCTION
     execute as @e[tag=CUT_DESTROY] at @s run tp @s ^ ^ ^1
     execute as @e[tag=CUT_DESTROY] at @s run setblock ~ ~ ~ air destroy
@@ -52,6 +56,19 @@
     kill @e[tag=CUT,scores={Timer=10..}]
     kill @e[tag=CUT_DESTROY,scores={Timer=10..}]
     kill @e[tag=RAVAGE,scores={Timer=5..}]
+# RAVAGE
+    # SETUP
+    execute if score Ravage Timer matches 1.. run scoreboard players add Ravage Timer 1
+    execute if score Ravage Timer matches 20.. run scoreboard players set Ravage Timer 0
+    tag @e[tag=RAVAGE,scores={Timer=1..}] add WOOL
+    # DAMAGE
+    execute if score Ravage Timer matches 1.. as @a[tag=CORR] at @s run execute as @e[distance=..15,nbt={Brain:{}},tag=!NAN] at @s run damage @s 4
+    # EFFECTs
+    execute if score Ravage Timer matches 1.. as @a[tag=CORR] at @s run execute as @e[distance=..15,nbt={Brain:{}},tag=!NAN] at @s run playsound minecraft:entity.generic.explode ambient @a[distance=..150] ~ ~ ~ 1 2 1
+    execute if score Ravage Timer matches 1.. as @a[tag=CORR] at @s run execute as @e[distance=..15,nbt={Brain:{}},tag=!NAN] at @s run summon minecraft:block_display ~ ~ ~ {view_range:1000f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.01f,0.01f,10f]},Tags:["NAN","RAVAGE"]}
+    execute if score Ravage Timer matches 1.. as @a[tag=CORR] at @s run execute as @e[distance=..15,nbt={Brain:{}},tag=!NAN] at @s if predicate corr:true-false run tp @e[tag=RAVAGE,limit=1,sort=nearest] ^-4 ^2 ^ facing entity @s eyes
+    execute if score Ravage Timer matches 1.. as @a[tag=CORR] at @s run execute as @e[distance=..15,nbt={Brain:{}},tag=!NAN] at @s unless predicate corr:true-false run tp @e[tag=RAVAGE,limit=1,sort=nearest] ^4.5 ^1.5 ^ facing entity @s eyes
+
 # GRAB
     # REMOVAL
     kill @e[tag=THROW,scores={Timer=5..}]

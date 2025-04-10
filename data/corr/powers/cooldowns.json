@@ -1,0 +1,18 @@
+{
+  "type": "origins:multiple",
+  "spread": {
+    "type": "origins:cooldown",
+    "cooldown": 200,
+    "hud_render": {
+      "bar_index": 3
+    }
+  },
+  "ravage": {
+    "type": "origins:cooldown",
+    "cooldown": 100,
+    "hud_render": {
+      "bar_index": 5
+    }
+  },
+  "hidden": true
+}
